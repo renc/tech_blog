@@ -1,0 +1,4 @@
+
+
+References:
+OpenGL 4.0 Shading Language Cookbook, 2011, chapter 8.
