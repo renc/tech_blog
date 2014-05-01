@@ -15,11 +15,9 @@ Reference: Using Dynamic Link Libraries (DLL) to Create Plug-Ins, by Jeremiah va
 http://3dgep.com/?p=1759 
 
 系统包括三部分, 我们常看到的(1)在运行的.exe, (2)某个可以被加载的plugin, 还有底下可能不容易察觉的(3)被前两者所共用的，起到连接关系的dll. 三者的结构类似于: 
-  ...................  
-  AppTest | PluginDLL
-  ...................   
-    	CommonDLL	
-  ...................   
+   
+  ![Alt text](data/how_plugin_system_work.PNG "plugin system example1")
+可见CommonDLL即被app.exe所调用，也被其它所有plugin所使用.
 
 在实现中遇到的questions: 
 - 怎么export一个dll A里面的信息到外面，让别的dll B能够使用? 
