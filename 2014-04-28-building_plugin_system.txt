@@ -33,6 +33,7 @@ Reference: Nuclex Plugin Architecture
 
 ÆäËü²Î¿¼references: 
 Qt plugin; 
-Building an Engine Plugin System, by Niklas Frykholm, from bitsquid.
+Building an Engine Plugin System, by Niklas Frykholm, from bitsquid. http://www.altdevblogaday.com/ 
+
 
 
