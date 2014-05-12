@@ -3,6 +3,7 @@
 刚看到如下代码:
 ```    
 // NvGLModel.h from nvidia samples 
+
 	nv::vec3f m_center; ///< The computed center of the bounding box of the app
 
 private:
