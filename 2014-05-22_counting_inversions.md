@@ -17,7 +17,12 @@ The Algorithms
 ----                                         
 那到底怎么计算呢? 根据定义，当然可能用brute-force来啦，虽然人家可能觉得很傻很笨，但这方法却有一个好处：简单，容易实现。例如后面讲到的方法虽然快，好像很高深，但是在实现中会容易出错，不是算法错了，是写代码含bug了，都不知道是否实现对了，这时候，把结果跟brute-fouce的结果比较一下就知道了...
 课上介绍是用divide-and-conquer的策略来做的，利用了merge-sort中merge时候的一个特点，刚好可以求inversions. 
+``` 
+iCount += arrL.size() - i; 
+``` 
 我的实现在:  https://github.com/renc/coding_exercises/tree/master/InversionCounter                               
 
-                            
+在实现中体会到的:  
+- 假如左右两个小数组都已经升序(整个数组都升序), 那么没有inversion, inversion = 0. 
+- 假如左右两个小数组都逆序(整个数组都逆序), 那么inversions就最大. 对于1->n组成的数组, max_inversion = (1 + (n-1))(n-1) / 2 = (n-1)n/2;  例如[7, 6, 5, 4, 3, 2, 1]的inversions=6+5+4+3+2+1=21. 
 
