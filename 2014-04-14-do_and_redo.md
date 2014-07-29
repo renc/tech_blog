@@ -10,6 +10,7 @@
 maya/devkit的例子所使用的方法是:
 ```
 //code  
+// inside class CommandXY 
 virtual bool isUndoable() const { return true or false; }
 virtual MStatus doIt( const MArglist & )
 {
@@ -34,3 +35,7 @@ virtual bool CustomOp::ExecuteAndInvert( void )
 };
 // for more details, check the mudbox sdk operation.h;
 ```
+
+[2014/6/30 updated] 上面的command也好, operation也好, 是具体的某个需要支持undoable的"操作", 而要整体支持undo功能, 还需要管理这些command/operation的mamager/center/kernel随便怎么叫. 管理者的功能是把这些command/operation压栈和出栈, 并调用它们的相应函数(上面我们提到的只是一部分). 而这个管理者的实现中, 一般带一个栈stack的结构用于以特定次序存放这些cmd/op, 那么假如以管理者的角度或者是stack的角度来看那些cmd/op, 又是怎么一个过程呢? 具体请search我另一篇跟undo/redo相关的文章, 谢谢。
+
+

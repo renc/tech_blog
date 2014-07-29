@@ -38,7 +38,7 @@ Pan and Zoom
 
 
 折腾一个小demo: 
-![Alt text](data/2014-06-20-transform_orthoProj.gif "output") 
+![Alt text](data/2014-06-20-transform_orthoProj.gif "output")      
 source code:  
     
    
