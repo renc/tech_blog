@@ -7,9 +7,7 @@ python file.py
 里面就出ui效果了. 省却了ide / c++代码 / 链接设置 / 反复修改反复编译的麻烦.    
 
 example 1. To define the style sheet 样式 of a button.    
-![Alt text](data/2014-08-25_qtButtonStyleSheet.PNG "output")   
-
-![Alt text](data/LineEndings_CRLF.PNG "output")  
+![Alt text](data/2014-08-25_qtButtonStyleSheet.png "output")   
 ```   
                  QPushButton {
                      border: 2px solid #8f8f91;
