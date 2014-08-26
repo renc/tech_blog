@@ -28,7 +28,7 @@ example 1. To define the style sheet 样式 of a button.
 code: GitHub\coding_exercises\stylesheetButton.py  
    
 example 2. To enable the drag&drop of buttons.       
-![Alt text](data/2014-08-25_qtButtonDragDrop.PNG "output")       
+![Alt text](data/2014-08-25_qtButtonDragDrop.png "output")       
 code: GitHub\coding_exercises\dragButton.py   
  
 
