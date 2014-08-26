@@ -8,6 +8,8 @@ python file.py
 
 example 1. To define the style sheet 样式 of a button.    
 ![Alt text](data/2014-08-25_qtButtonStyleSheet.PNG "output")   
+
+![Alt text](data/LineEndings_CRLF.PNG "output")  
 ```   
                  QPushButton {
                      border: 2px solid #8f8f91;
