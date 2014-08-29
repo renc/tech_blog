@@ -1,6 +1,10 @@
 [categories] programming, 
 
-
+if string == "": 
+    pass
+if obj is None:
+    pass 
+    
 
 References: 
 ----      
