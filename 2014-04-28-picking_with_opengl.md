@@ -1,29 +1,38 @@
+Title: build simple ui using pySide 
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: programming 
+Tags: 
+Slug: Picking with OpenGL 
+Authors: 
+Summary: Picking with OpenGL 
+
 --- 
 layout: post 
 title: Picking with OpenGL 
 categories: computer graphics  
 --- 
 
-> If you have choices, choose the best. If you have no choice, do the best. Èç¹ûÓĞÑ¡Ôñ£¬ÄÇ¾ÍÑ¡Ôñ×îºÃµÄ£»Èç¹ûÃ»ÓĞÑ¡Ôñ£¬ÄÇ¾ÍÅ¬Á¦×öµ½×îºÃ¡£
+> If you have choices, choose the best. If you have no choice, do the best. å¦‚æœæœ‰é€‰æ‹©ï¼Œé‚£å°±é€‰æ‹©æœ€å¥½çš„ï¼›å¦‚æœæ²¡æœ‰é€‰æ‹©ï¼Œé‚£å°±åŠªåŠ›åšåˆ°æœ€å¥½ã€‚
 
 # Picking with OpenGL
 
-ÔÚ3dÈí¼şÌá¹©½»»¥µÄÊ±ºò£¬ÀıÈçÏÈÑ¡ÔñÁËÄ³¸övertex»òÕßÄ³¸öface£¬È»ºóÈ¥²Ù×÷Õâ¸ö±»Ñ¡ÖĞµÄ¶«Î÷¡£ÈçÔÚmayaÀïÃæºÜ¶à¹¤¾ß(mayaÀïÃæ°Ñcontext==tool?)¶¼ÊÇÏÈpick the manipulator, drag the manipulator, to update the attributes of the node (the selection list). µÚÒ»²½¾ÍÊÇÒªÑ¡ÖĞmouseµ×ÏÂµÄ¶«Î÷£¬ÕâÊÇÔõÃ´×öµ½µÄÄØ?
+åœ¨3dè½¯ä»¶æä¾›äº¤äº’çš„æ—¶å€™ï¼Œä¾‹å¦‚å…ˆé€‰æ‹©äº†æŸä¸ªvertexæˆ–è€…æŸä¸ªfaceï¼Œç„¶åå»æ“ä½œè¿™ä¸ªè¢«é€‰ä¸­çš„ä¸œè¥¿ã€‚å¦‚åœ¨mayaé‡Œé¢å¾ˆå¤šå·¥å…·(mayaé‡Œé¢æŠŠcontext==tool?)éƒ½æ˜¯å…ˆpick the manipulator, drag the manipulator, to update the attributes of the node (the selection list). ç¬¬ä¸€æ­¥å°±æ˜¯è¦é€‰ä¸­mouseåº•ä¸‹çš„ä¸œè¥¿ï¼Œè¿™æ˜¯æ€ä¹ˆåšåˆ°çš„å‘¢?
 
-ÆäÊµÒ»¿ªÊ¼ÎÒÏëµ½µÄ·½·¨ray intersectionµÄ·½·¨£¬
+å…¶å®ä¸€å¼€å§‹æˆ‘æƒ³åˆ°çš„æ–¹æ³•ray intersectionçš„æ–¹æ³•ï¼Œ
 approach 0. check the intersection between a ray and object.
-µ«ÊÇ¿´µ½Ã²ËÆÏÂÃæÕâÁ½ÖÖ·½Ãæ¸ü³£ÓÃ:
+ä½†æ˜¯çœ‹åˆ°è²Œä¼¼ä¸‹é¢è¿™ä¸¤ç§æ–¹é¢æ›´å¸¸ç”¨:
 approach 1. use the select mode in opengl;
 approach 2. color coding/picking: render objects in different color, pick a color, map to the object. 
 
 ## Approach 0. ray intersection. 
 Reference example: cinder, version 0.8.5, samples/Picking3D. 
-(Õâ¸öcinderµÄÀı×ÓÁíÒ»ÓĞÒâË¼µØ·½ÊÇËü¶Ômouse eventµÄÏìÓ¦respondÊÇÄ£Äâsimulate mayaµÄ. ¾ßÌåÔÚMayaCamUI.hÀïÃæ, ¸ù¾İmouse eventÀ´ÅĞ¶ÏÊÇÔÚpanning/tumbling/zoomingÄÄ¸öÄ£Ê½ÏÂ, È»ºó¸üĞÂperspective cameraµÄpositionµÈĞÅÏ¢)
+(è¿™ä¸ªcinderçš„ä¾‹å­å¦ä¸€æœ‰æ„æ€åœ°æ–¹æ˜¯å®ƒå¯¹mouse eventçš„å“åº”respondæ˜¯æ¨¡æ‹Ÿsimulate mayaçš„. å…·ä½“åœ¨MayaCamUI.hé‡Œé¢, æ ¹æ®mouse eventæ¥åˆ¤æ–­æ˜¯åœ¨panning/tumbling/zoomingå“ªä¸ªæ¨¡å¼ä¸‹, ç„¶åæ›´æ–°perspective cameraçš„positionç­‰ä¿¡æ¯)
 
-¼ÙÈçÊÇÒ»¸öray¸úmeshÉÏtriangle faces×ö²âÊÔ. 
+å‡å¦‚æ˜¯ä¸€ä¸ªrayè·Ÿmeshä¸Štriangle facesåšæµ‹è¯•. 
   Ray = point + vector direction(end point - start point);
   Triangle face = (point0, point1, point2); 
-Question: ÔõÃ´Çó³öray? µÃµ½µÄ×ø±êÊÇÔÚworld space, camera space, or model's object space ? 
+Question: æ€ä¹ˆæ±‚å‡ºray? å¾—åˆ°çš„åæ ‡æ˜¯åœ¨world space, camera space, or model's object space ? 
                                            
 ## Approach 1. using selection buffer 
 http://content.gpwiki.org/index.php/OpenGL:Tutorials:Picking
@@ -32,8 +41,8 @@ http://content.gpwiki.org/index.php/OpenGL:Tutorials:Picking
 
 ## Approach 2. color picking
 
-ÉÏÃæµÄapproach 1ÓĞÊ²Ã´ÎÊÌâÄØ? 
+ä¸Šé¢çš„approach 1æœ‰ä»€ä¹ˆé—®é¢˜å‘¢? 
 http://www.opengl.org/wiki/Common_Mistakes#Selection_and_Picking_and_Feedback_Mode 
-Ã²ËÆÖ´ĞĞÔÚCPU¶Ë£¬ÔÚÄ³Ğ©ÊµÏÖÉÏĞÔÄÜ²»ĞĞperformance is lousy(ĞÂµ¥´Ê:-). ÓÚÊÇ, ÔÚmodern openglÖĞ±»deprecated and even removedÁË£¬È¡¶ø´úÖ®µÄÊÇÕâapproach 2ÀïÃæµÄcolor picking·½·¨. ÒıÓÃ×ÔÉÏÎÄ: A modern OpenGL program should do color picking (render each object with some unique color and glReadPixels to find out what object your mouse was on) or do the picking with some 3rd party mathematics library (ÎÒ»³ÒÉÕâÀïµÄmath·½·¨¾ÍÊÇÖ¸ray-intersection·½·¨).
+è²Œä¼¼æ‰§è¡Œåœ¨CPUç«¯ï¼Œåœ¨æŸäº›å®ç°ä¸Šæ€§èƒ½ä¸è¡Œperformance is lousy(æ–°å•è¯:-). äºæ˜¯, åœ¨modern openglä¸­è¢«deprecated and even removedäº†ï¼Œå–è€Œä»£ä¹‹çš„æ˜¯è¿™approach 2é‡Œé¢çš„color pickingæ–¹æ³•. å¼•ç”¨è‡ªä¸Šæ–‡: A modern OpenGL program should do color picking (render each object with some unique color and glReadPixels to find out what object your mouse was on) or do the picking with some 3rd party mathematics library (æˆ‘æ€€ç–‘è¿™é‡Œçš„mathæ–¹æ³•å°±æ˜¯æŒ‡ray-intersectionæ–¹æ³•).
 
 TODO...

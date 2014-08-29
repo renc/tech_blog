@@ -1,10 +1,19 @@
+Title: build simple ui using pySide 
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: programming 
+Tags: 
+Slug: Example of code conventions 
+Authors: 
+Summary: Example of code conventions
+
 --- 
 layout: post 
 title: Example of code conventions 
 categories: programming 
 --- 
 
-¸Õ¿´µ½ÈçÏÂ´úÂë:
+åˆšçœ‹åˆ°å¦‚ä¸‹ä»£ç :
 ```    
 // NvGLModel.h from nvidia samples 
 
@@ -16,6 +25,6 @@ private:
 	nv::vec3f m_minExtent, m_maxExtent, m_radius;
 
 ```           
-¾õµÃ±ğÅ¤£¬Ö÷ÒªÊÇÓĞĞ©³ÉÔ±±äÁ¿data memberÓÃÀ´m_£¬¶øÓĞĞ©²»ÓÃ£¬²»Í³Ò»¡£ËùÎ½µÄtaste?
+è§‰å¾—åˆ«æ‰­ï¼Œä¸»è¦æ˜¯æœ‰äº›æˆå‘˜å˜é‡data memberç”¨æ¥m_ï¼Œè€Œæœ‰äº›ä¸ç”¨ï¼Œä¸ç»Ÿä¸€ã€‚æ‰€è°“çš„taste?
  
-btw, ·´ÀıµÄÓ¢ÎÄÔ­À´ÊÇ: counter example; negative example 
+btw, åä¾‹çš„è‹±æ–‡åŸæ¥æ˜¯: counter example; negative example 

@@ -1,3 +1,12 @@
+Title: build simple ui using pySide 
+Date: 2014-08-25 10:20
+Modified: 2014-08-25 19:30
+Category: programming
+Tags: 
+Slug: build simple ui using pySide 
+Authors: renc
+Summary: 记录一下做UI prototype时候遇到的新概念 
+
 --- 
 layout: post 
 title: build simple ui using pySide 
@@ -13,18 +22,18 @@ categories: programming
 example 1. To define the style sheet 样式 of a button.    
 ![Alt text](data/2014-08-25_qtButtonStyleSheet.png "output")   
 ```   
-                 QPushButton {
-                     border: 2px solid #8f8f91;
-                     border-radius: 20px;
-                     background-color: rgb(176, 189, 194);
-                     color: rgb(255, 0, 0); 
-                     font: 10pt "MS Shell Dlg 2";
-                     min-width: 80px;
-                     min-height: 80px;  
-                 }
-                 QPushButton:pressed {
-                     background-color: rgb(98, 105, 108);
-                 }
+QPushButton {
+    border: 2px solid #8f8f91;
+    border-radius: 20px;
+    background-color: rgb(176, 189, 194);
+    color: rgb(255, 0, 0); 
+    font: 10pt "MS Shell Dlg 2";
+    min-width: 80px;
+    min-height: 80px;  
+} 
+QPushButton:pressed {
+    background-color: rgb(98, 105, 108);
+}
 ```   
 听说这有点像CSS的样子. 上面的定义可以在QtDesign里面不断尝试, 拖一个QPushButton到面板上, 在property panel里面找到Style Sheet属性, 里面就可以更改样式. 
 code: GitHub\coding_exercises\stylesheetButton.py 

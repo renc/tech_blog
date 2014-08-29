@@ -1,16 +1,25 @@
+Title: choose the overrided function 
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: programming 
+Tags: 
+Slug: choose the overrided function  
+Authors: 
+Summary: In class hierarchy, if functions are overrided by some subclass, which one will be invoked? 
+
 --- 
 layout: post 
-title: function override 
+title: choose the overrided function 
 categories: programming 
 --- 
 
-# ÄÄ¸öoverrideµÄº¯Êı²ÅÊÇ°¡? 
+# å“ªä¸ªoverrideçš„å‡½æ•°æ‰æ˜¯å•Š? 
 
-¹ÊÊÂ·¢ÉúµÄ±³¾°£ºÔÚ¿´´úÂëÊ±£¬´Ó¸¸Ààµ½×ÓÀàºÃ¼¸²ã°¡£¬ÔÚÉÏ²ã(ÎÒÒÔÍù¸¸Àà·½ÏòÅÜÎªÉÏ)»á¶¨ÒåÒ»Ğ©virtual function, ÔÚÏÂ²ã»áoverride Ä³ÖÖÉÏ²ãµÄvirtual function£¬ÕâºÜÕı³£¡£¶øµ±ÔÚÉÏ²ãµÄfunction(may or may not be virtual)ÖĞÈ¥µ÷ÓÃÒ»¸övirtual fuctionµÄÊ±ºò£¬µ½µ×ÊÇÄÄÒ»²ãÖĞµÄÊµÏÖ°æ±¾±»ÕæÕıµ÷ÓÃÁËÄØ£¿
+æ•…äº‹å‘ç”Ÿçš„èƒŒæ™¯ï¼šåœ¨çœ‹ä»£ç æ—¶ï¼Œä»çˆ¶ç±»åˆ°å­ç±»å¥½å‡ å±‚å•Šï¼Œåœ¨ä¸Šå±‚(æˆ‘ä»¥å¾€çˆ¶ç±»æ–¹å‘è·‘ä¸ºä¸Š)ä¼šå®šä¹‰ä¸€äº›virtual function, åœ¨ä¸‹å±‚ä¼šoverride æŸç§ä¸Šå±‚çš„virtual functionï¼Œè¿™å¾ˆæ­£å¸¸ã€‚è€Œå½“åœ¨ä¸Šå±‚çš„function(may or may not be virtual)ä¸­å»è°ƒç”¨ä¸€ä¸ªvirtual fuctionçš„æ—¶å€™ï¼Œåˆ°åº•æ˜¯å“ªä¸€å±‚ä¸­çš„å®ç°ç‰ˆæœ¬è¢«çœŸæ­£è°ƒç”¨äº†å‘¢ï¼Ÿ
 
 show me the code: 
-ÏÂÃæÎÒÖ»ÊÇ¶¨ÒåÁ½²ã, ManipBase and ManipMove, Á½¸övritual functions interfaceA() and interfaceB(); ÎªÊ²Ã´ÓÃÕâĞ©Ãû×Ö? maya apiÖĞ²»ÊÇÓĞmanipulatorÂï, base±íÊ¾¸¸Àà, move±íÊ¾ÓÃÓÚÒÆ¶¯ÎïÌåµÄmanipulator. 
-ÕâÀï£¬ÏÈ¿´µÚÒ»ÖÖÇé¿öTest1£¬È»ºóÉÔÎ¢×öÁË¸Ä¶¯£¬µÃµ½Test2 and Test3. 
+ä¸‹é¢æˆ‘åªæ˜¯å®šä¹‰ä¸¤å±‚, ManipBase and ManipMove, ä¸¤ä¸ªvritual functions interfaceA() and interfaceB(); ä¸ºä»€ä¹ˆç”¨è¿™äº›åå­—? maya apiä¸­ä¸æ˜¯æœ‰manipulatorå˜›, baseè¡¨ç¤ºçˆ¶ç±», moveè¡¨ç¤ºç”¨äºç§»åŠ¨ç‰©ä½“çš„manipulator. 
+è¿™é‡Œï¼Œå…ˆçœ‹ç¬¬ä¸€ç§æƒ…å†µTest1ï¼Œç„¶åç¨å¾®åšäº†æ”¹åŠ¨ï¼Œå¾—åˆ°Test2 and Test3. 
 ```
 // code 
 #include <stdio.h>
@@ -132,11 +141,11 @@ int main()
 	return 1;
 }
 ```
-½á¹û£¿
-ÎÒµÄ¸Ğ¾õÊÇvirtual functionµÄµ÷ÓÃ»á´Ó"×îµ×²ã"¿ªÊ¼ÕÒ£¬ÕÒµ½¾ÍÖ´ĞĞ£¬ÕÒ²»µ½¾ÍÍùÉÏ²ãÕÒ. 
+ç»“æœï¼Ÿ
+æˆ‘çš„æ„Ÿè§‰æ˜¯virtual functionçš„è°ƒç”¨ä¼šä»"æœ€åº•å±‚"å¼€å§‹æ‰¾ï¼Œæ‰¾åˆ°å°±æ‰§è¡Œï¼Œæ‰¾ä¸åˆ°å°±å¾€ä¸Šå±‚æ‰¾. 
 
-ÕâÀïµÄ"×îµ×²ã"ÓĞÒâË¼¡£ÀıÈçÉÏÃæÀı×ÓÖĞManipBase *pManip = new ManipMove;ÄÇ×îµ×²ã¾ÍÊÇManipMove;
-¼ÙÈçÔÙ¼ÓÈëÒ»²ãManipBase <- ManipMove <- ManipSuperFastMove :-) 
-case 1: ManipBase *pManip = new ManipMove;ÄÇ×îµ×²ã»¹ÊÇManipMove;
-case 2: ManipBase *pManip = new ManipSuperFastMove;ÄÇ×îµ×²ã¾ÍÊÇManipSuperFastMove;
+è¿™é‡Œçš„"æœ€åº•å±‚"æœ‰æ„æ€ã€‚ä¾‹å¦‚ä¸Šé¢ä¾‹å­ä¸­ManipBase *pManip = new ManipMove;é‚£æœ€åº•å±‚å°±æ˜¯ManipMove;
+å‡å¦‚å†åŠ å…¥ä¸€å±‚ManipBase <- ManipMove <- ManipSuperFastMove :-) 
+case 1: ManipBase *pManip = new ManipMove;é‚£æœ€åº•å±‚è¿˜æ˜¯ManipMove;
+case 2: ManipBase *pManip = new ManipSuperFastMove;é‚£æœ€åº•å±‚å°±æ˜¯ManipSuperFastMove;
 

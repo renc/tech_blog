@@ -1,16 +1,25 @@
+Title: Blendshape at maya 
+Date: 2013-08-14 10:20
+Modified: 2013-08-14 10:20
+Category: programming
+Tags: maya, 
+Slug: Blendshape at maya 
+Authors: renc 
+Summary: æœ€è¿‘æ¥è§¦äº†ä¸€ç‚¹maya blendshape programming, ç¨å¾®è®°å½•ä¸€ä¸‹ã€‚
+
 --- 
 layout: post 
 title: Blendshape at maya 
 categories: programming 
 --- 
 
-ÒıÑÔ
+å¼•è¨€
 ----
-> ×î½ü½Ó´¥ÁËÒ»µãmaya blendshape programming, ÉÔÎ¢¼ÇÂ¼Ò»ÏÂ¡£
+> æœ€è¿‘æ¥è§¦äº†ä¸€ç‚¹maya blendshape programming, ç¨å¾®è®°å½•ä¸€ä¸‹ã€‚
 
-BlendShape deformer basis (»ù´¡)
+BlendShape deformer basis (åŸºç¡€)
 ----
-ÏÈËµÃ÷Ò»¸öÌØµã£¬µ±dragÒ»¸öcube or sphereÎïÌåµÄÊ±ºò£¬»áÉú³É<transform node, shape node>Á½¸önodes, ¾ßÌåµÄÏ¸½ÚÇë¿´maya scene graph£¬DAG¡£
+å…ˆè¯´æ˜ä¸€ä¸ªç‰¹ç‚¹ï¼Œå½“dragä¸€ä¸ªcube or sphereç‰©ä½“çš„æ—¶å€™ï¼Œä¼šç”Ÿæˆ<transform node, shape node>ä¸¤ä¸ªnodes, å…·ä½“çš„ç»†èŠ‚è¯·çœ‹maya scene graphï¼ŒDAGã€‚
 
 To create a simple blendshape example,  
 Polygon mode, create a cube, we have <pCube1, pCubeShape1>;   
@@ -31,19 +40,19 @@ select cube1, menu Windows > Connections, we see the connections of these nodes.
 | MObject | MFnBlendShapeDeformer | Target Weight slider | MObject |           
 | FbxGeometry | FbxBlendShape | FbxBlendShapeChannel | FbxShape|       
 
-Õâ¸ötableÕ¹Ê¾ÁËblendshape deformerÀïÃæµÄÈıÒªËØ: source shape, target shapes, target weight (ÀàËÆÓÚblending weight).
+è¿™ä¸ªtableå±•ç¤ºäº†blendshape deformeré‡Œé¢çš„ä¸‰è¦ç´ : source shape, target shapes, target weight (ç±»ä¼¼äºblending weight).
 
-ÓĞ¹Øtarget weight sliderµÄ×¢ÒâÊÂÏî:   
+æœ‰å…³target weight sliderçš„æ³¨æ„äº‹é¡¹:   
 
-+ Ò»¸öblendshape¿ÉÒÔÓĞ¶à¸ötarget weight slider, Ã¿Ò»¸ösliderÖĞ¿ÉÒÔÊÇÒ»¸öor¶à¸ötarget shapes, È¡¾öÓÚIn-Between off/on.  
++ ä¸€ä¸ªblendshapeå¯ä»¥æœ‰å¤šä¸ªtarget weight slider, æ¯ä¸€ä¸ªsliderä¸­å¯ä»¥æ˜¯ä¸€ä¸ªorå¤šä¸ªtarget shapes, å–å†³äºIn-Between off/on.  
 
-+ Ã¿Ò»¸ötarget weight slider ÓĞÒ»¸öÊıÖµ½Ğtarget weight (value) ±íÊ¾target shapes¶ÔsourceµÄeffect.  
++ æ¯ä¸€ä¸ªtarget weight slider æœ‰ä¸€ä¸ªæ•°å€¼å«target weight (value) è¡¨ç¤ºtarget shapeså¯¹sourceçš„effect.  
 
-+ Ã¿Ò»¸ötarget weight slider ÓĞÒ»¸öÃû×Ötarget weight or target weight slider name or name of target weight. Õâ¸önameÄ¬ÈÏby defaultÊÇÓÃtransform nodeµÄÃû×Ö£¬ÀıÈçÉÏÊöÀı×ÓµÄÁ½¸ötarget weightsµÄÃû×Ö·Ö±ğÊÇpCube2 and pCube3. trickyµÄÊÇÕâ¸öÃû×Ö¿ÉÒÔ±»¸Äµô, ¸Ä³Éwhatever u like, ÀıÈçÕâÀï¸Ä³ÉpCube2x. ÓÚÊÇÔÚcodeÀïÃæ¾ÍÓĞ¸öÎÊÌâÁË£¬¸ø³öÒ»¸ötarget weight name, how to find out the target shape (or the transform node of the target shape) associated with this target weight name?
++ æ¯ä¸€ä¸ªtarget weight slider æœ‰ä¸€ä¸ªåå­—target weight or target weight slider name or name of target weight. è¿™ä¸ªnameé»˜è®¤by defaultæ˜¯ç”¨transform nodeçš„åå­—ï¼Œä¾‹å¦‚ä¸Šè¿°ä¾‹å­çš„ä¸¤ä¸ªtarget weightsçš„åå­—åˆ†åˆ«æ˜¯pCube2 and pCube3. trickyçš„æ˜¯è¿™ä¸ªåå­—å¯ä»¥è¢«æ”¹æ‰, æ”¹æˆwhatever u like, ä¾‹å¦‚è¿™é‡Œæ”¹æˆpCube2x. äºæ˜¯åœ¨codeé‡Œé¢å°±æœ‰ä¸ªé—®é¢˜äº†ï¼Œç»™å‡ºä¸€ä¸ªtarget weight name, how to find out the target shape (or the transform node of the target shape) associated with this target weight name?
 
-+ Ã¿Ò»¸ötarget weight slider ¶ÔÓ¦ÓÚfbxÀïÃæµÄFbxBlendShapeChannel, ¶øÇÒmaya/fbx exporter plugin (fbxmaya.mll)¶ÔchannelµÄÃüÃûÊÇblendShape1.nameOfTargetWeight.  
++ æ¯ä¸€ä¸ªtarget weight slider å¯¹åº”äºfbxé‡Œé¢çš„FbxBlendShapeChannel, è€Œä¸”maya/fbx exporter plugin (fbxmaya.mll)å¯¹channelçš„å‘½åæ˜¯blendShape1.nameOfTargetWeight.  
 
-Ò»Ğ©µ÷ÊÔµÄMEL commands: 
+ä¸€äº›è°ƒè¯•çš„MEL commands: 
 ```                  
 	objExists pCube2   
 	objExists |pCube2	
@@ -57,44 +66,44 @@ select cube1, menu Windows > Connections, we see the connections of these nodes.
 	blendShape -q -g blendShape1;
 	// Result: pCubeShape1 //  the source shape's name, not transform node's name.
 	blendShape -q -target blendShape1;   
-	// Result: pCube2 pCube3 // the target shape ¡®s transform node¡¯s name.
+	// Result: pCube2 pCube3 // the target shape â€˜s transform nodeâ€™s name.
 	blendShape -q -t blendShape1;
 	// Result: pCube2 pCube3 // the flag -target is the same as -t
-	blendShape ¨Cq ¨CweightCount blendShape1;   
-	// Result: 2 //            ÕâÀï·µ»ØµÄÊı×ÖÓ¦¸Ã¾ÍÊÇ¸ÕºÃÉÏÃætargetsÊıÄ¿
+	blendShape â€“q â€“weightCount blendShape1;   
+	// Result: 2 //            è¿™é‡Œè¿”å›çš„æ•°å­—åº”è¯¥å°±æ˜¯åˆšå¥½ä¸Šé¢targetsæ•°ç›®
     blendShape -q -w blendShape1;
-	// Result: 0.5 0 //  Ã¿Ò»¸ötarget weight's value. 
+	// Result: 0.5 0 //  æ¯ä¸€ä¸ªtarget weight's value. 
 
 	listAttr -sn blendShape1.weight[0];    
-	// Result: pCube2x //  ÕâÃüÁî¿ÉÒÔ·ÃÎÊµ½±»Delete¶øbakedµÄtarget. 
+	// Result: pCube2x //  è¿™å‘½ä»¤å¯ä»¥è®¿é—®åˆ°è¢«Deleteè€Œbakedçš„target. 
 	listAttr -m blendShape1.w;  
 	// Result: pCube2x pCube3 // names of target weight, not the name of target shape or transform node.
-	// ÕâÊä³öÒ²»á°üº¬±»Delete¶øbakedµÄtargets. 
+	// è¿™è¾“å‡ºä¹Ÿä¼šåŒ…å«è¢«Deleteè€Œbakedçš„targets. 
 	
 	getAttr blendShape1.weight;
-	// Result: 0.4 0 0.2 //ÀıÈç(s:pCube1, t:pCube2, pCube3, pCube4), È»ºóÖ±½Ó°´¼ü¡°Delete"µôpCube3 (pCube3±ä³ÉbakedµÄÁË. 
+	// Result: 0.4 0 0.2 //ä¾‹å¦‚(s:pCube1, t:pCube2, pCube3, pCube4), ç„¶åç›´æ¥æŒ‰é”®â€œDelete"æ‰pCube3 (pCube3å˜æˆbakedçš„äº†. 
 	
 	aliasAttr -q blendShape1;   
-	// Result: pCube2x weight[0] pCube3 weight[1] // ¶ÔÓ¦¹ØÏµ 
+	// Result: pCube2x weight[0] pCube3 weight[1] // å¯¹åº”å…³ç³» 
 	aliasAttr -q blendShape1.pCube2x;   
 	// Result: pCube2x //    
 	aliasAttr smile blendShape1.weight[0];
 	aliasAttr smile blendShape1.w[0]; // weight[0] == w[0] 
-	// Result: 1 //  °Ñweight[0]¸ÄÃûÎªsmile, ¶ø²»ÊÇÉÏÃæµÄpCube2xÁË. 
+	// Result: 1 //  æŠŠweight[0]æ”¹åä¸ºsmile, è€Œä¸æ˜¯ä¸Šé¢çš„pCube2xäº†. 
 	aliasAttr -rm blendShape1.smile
-	// »á¸Ä³Éweight[x]Õâ¸öÃû×Ö ÎÒÏàĞÅÕâ¸öx¾ÍÊÇtarget/weight/sliderµÄindex. 
+	// ä¼šæ”¹æˆweight[x]è¿™ä¸ªåå­— æˆ‘ç›¸ä¿¡è¿™ä¸ªxå°±æ˜¯target/weight/sliderçš„index. 
 	
-	setAttr blendShape1.pCube2x 0.5;  //³É¹¦, µ÷target weight sliderµÄvalue.   
-	setAttr "blendShape1.pCube2x" 0.8; //³É¹¦, µ÷target weight sliderµÄvalue.   
+	setAttr blendShape1.pCube2x 0.5;  //æˆåŠŸ, è°ƒtarget weight sliderçš„value.   
+	setAttr "blendShape1.pCube2x" 0.8; //æˆåŠŸ, è°ƒtarget weight sliderçš„value.   
 	setAttr blendShape1.smile 0.6; // Succeed, 
 	setAttr blendShape1.w[0] 0.7;  // Succeed, w[0] == weight[0] has been renamed as smile. 
 	
-	listConnections blendShape1.it; //Ò»ÑùµÄ
+	listConnections blendShape1.it; //ä¸€æ ·çš„
 	listConnections blendShape1.inputTarget;
-	// Result: ÁĞ³öËùÓĞtarget shapes (²»°üÀ¨baked)
+	// Result: åˆ—å‡ºæ‰€æœ‰target shapes (ä¸åŒ…æ‹¬baked)
 	
 ```    
-ÔÚScript EditorÖĞÊäÈë help <command name>»á·µ»Øhelp information.  ¶øÇÒÔÚC++ sourceÀïÃæÒ²¿ÉÒÔÓÃÕâĞ©mel commands, ÒÔobjExistsÎªÀı:
+åœ¨Script Editorä¸­è¾“å…¥ help <command name>ä¼šè¿”å›help information.  è€Œä¸”åœ¨C++ sourceé‡Œé¢ä¹Ÿå¯ä»¥ç”¨è¿™äº›mel commands, ä»¥objExistsä¸ºä¾‹:
 ```
 MString command = "objExists pCube1";
 int result = 0; // false;
@@ -104,26 +113,26 @@ MStatus status = MGlobal::executeCommand(command, result);
 updated about getting the target shapes from the blendshape deformer node.
 ![Alt text](2013-08-14_maya_blendshape_fig_maya_scene_Weight_InBetween.PNG "What is Target Weight? Like slots") 
 
-updated 2013/10/11. blendShapeÊÇÏßĞÔ²Ù×÷£¬deformed result = source * (1 - target_weight) + target * target_weight;
-source and target¿ÉÒÔËµshape mesh, Ò²¿ÉÒÔÊÇ±ğµÄblendshape deformation nodeµÄ½á¹û¡£
+updated 2013/10/11. blendShapeæ˜¯çº¿æ€§æ“ä½œï¼Œdeformed result = source * (1 - target_weight) + target * target_weight;
+source and targetå¯ä»¥è¯´shape mesh, ä¹Ÿå¯ä»¥æ˜¯åˆ«çš„blendshape deformation nodeçš„ç»“æœã€‚
 
-udated 2013/10/12. Óöµ½Ò»¸öÊ¹ÓÃobjExists mel commandµÄbug. ¼ÙÈçFace + FaceShapeÊÇÃæ²¿µÄtransform + shape nodes, ËüÔÚDAGÖĞµÄpathÊÇ:
+udated 2013/10/12. é‡åˆ°ä¸€ä¸ªä½¿ç”¨objExists mel commandçš„bug. å‡å¦‚Face + FaceShapeæ˜¯é¢éƒ¨çš„transform + shape nodes, å®ƒåœ¨DAGä¸­çš„pathæ˜¯:
 |man|head_group|Face|FaceShape 
-ÄÇÃ´ÔÚScript EditorÀïÃæÖ´ĞĞ:
+é‚£ä¹ˆåœ¨Script Editoré‡Œé¢æ‰§è¡Œ:
 objExists |Face
-µÄ½á¹ûÊÇÊ²Ã´ÄØ? false, ÕÒ²»µ½|Face ? ³¡¾°ÖĞ²»ÊÇÃ÷Ã÷ÓĞFaceÕâ¸önodeµÄÂğ? ÊÔÊÔÖ´ĞĞ:
+çš„ç»“æœæ˜¯ä»€ä¹ˆå‘¢? false, æ‰¾ä¸åˆ°|Face ? åœºæ™¯ä¸­ä¸æ˜¯æ˜æ˜æœ‰Faceè¿™ä¸ªnodeçš„å—? è¯•è¯•æ‰§è¡Œ:
 objExists Face
-½á¹ûÊÇtrue¡£ Ô­À´²»ÊÇÕÒ²»µ½Face, ¶øÊÇÕÒ²»µ½|Face. Á½ÕßÓĞÊ²Ã´Çø±ğ? |Face±íÊ¾Õâ¸öface nodeÊÇÖ±½ÓÔÚrootÏÂÃæ. ËùÒÔÎÒ¾õµÃÓÃobjExistsÃüÁî»¹ÊÇ±ğ¼Ó|ÎªºÃ. ÔÚmaya scene graphµÄ×ÊÁÏÖĞÓĞÌáµ½|.
+ç»“æœæ˜¯trueã€‚ åŸæ¥ä¸æ˜¯æ‰¾ä¸åˆ°Face, è€Œæ˜¯æ‰¾ä¸åˆ°|Face. ä¸¤è€…æœ‰ä»€ä¹ˆåŒºåˆ«? |Faceè¡¨ç¤ºè¿™ä¸ªface nodeæ˜¯ç›´æ¥åœ¨rootä¸‹é¢. æ‰€ä»¥æˆ‘è§‰å¾—ç”¨objExistså‘½ä»¤è¿˜æ˜¯åˆ«åŠ |ä¸ºå¥½. åœ¨maya scene graphçš„èµ„æ–™ä¸­æœ‰æåˆ°|.
 
 
 MFnBlendShapeDeformer::addTarget(base shape, channel/target weight index, target shape, weight value); 
-¿É·ñ¶à´ÎaddÏàÍ¬µÄtargetsÄØ£¿»¹ÊÇÃ¿´Îadd targetÖ®Ç°ÏÈÅĞ¶Ï¼ÙÈçÒÑ¾­ÓĞµÃ»°¾ÍÏÈremoveTargetÄØ?
+å¯å¦å¤šæ¬¡addç›¸åŒçš„targetså‘¢ï¼Ÿè¿˜æ˜¯æ¯æ¬¡add targetä¹‹å‰å…ˆåˆ¤æ–­å‡å¦‚å·²ç»æœ‰å¾—è¯å°±å…ˆremoveTargetå‘¢?
 
 
-Target weightÉÏµÄconnection (MPlugµÄÓ¦ÓÃ)
+Target weightä¸Šçš„connection (MPlugçš„åº”ç”¨)
 ---- 
-À´Ò»¸ö¼òµ¥µÄÀı×Ó¡£½¨Ò»¸öblendShape1(cube1 as source, cube2 and cube3 and cube4 as target shapes, rename the weight to be weight1 and weight2)¡£È»ºóselect cube3 and shift select cube1, remove target from blendshape (Ä¿µÄÊÇÏÔÊ¾plug ¸úexisting weight index list¿ÉÄÜ²»ÏàµÈ£¬ÒòÎªÇ°ÕßplugÖĞÄÇ¸ö±»É¾µôµÄtargetÖ®Ç°Õ¼µÄÎ»ÖÃ»¹ÔÚ) 
-blendshape1.weight1 ÊÇÒ»¸öplugµÄÃû×Ö£¬ÆäÊµÕâ¸öweight1Ò²Í¬Ê±ÊÇ¶ÔÓ¦target sliderµÄÃû×Ö¡£ÉÏÃæÌáµ½¿ÉÒÔÓÃlistAttr and aliasAttrÀ´ÕÒÓĞÊ²Ã´plugsºÍ¸ÄËüÃÇµÄÃû×Ö. ÏÂÃæÀ´¿´ÔõÃ´»ñµÃobtainÕâĞ©sliders/weights:
+æ¥ä¸€ä¸ªç®€å•çš„ä¾‹å­ã€‚å»ºä¸€ä¸ªblendShape1(cube1 as source, cube2 and cube3 and cube4 as target shapes, rename the weight to be weight1 and weight2)ã€‚ç„¶åselect cube3 and shift select cube1, remove target from blendshape (ç›®çš„æ˜¯æ˜¾ç¤ºplug è·Ÿexisting weight index listå¯èƒ½ä¸ç›¸ç­‰ï¼Œå› ä¸ºå‰è€…plugä¸­é‚£ä¸ªè¢«åˆ æ‰çš„targetä¹‹å‰å çš„ä½ç½®è¿˜åœ¨) 
+blendshape1.weight1 æ˜¯ä¸€ä¸ªplugçš„åå­—ï¼Œå…¶å®è¿™ä¸ªweight1ä¹ŸåŒæ—¶æ˜¯å¯¹åº”target sliderçš„åå­—ã€‚ä¸Šé¢æåˆ°å¯ä»¥ç”¨listAttr and aliasAttræ¥æ‰¾æœ‰ä»€ä¹ˆplugså’Œæ”¹å®ƒä»¬çš„åå­—. ä¸‹é¢æ¥çœ‹æ€ä¹ˆè·å¾—obtainè¿™äº›sliders/weights:
 ```
 	// mel commands
 	blendShape -q -wc blendShapeName; // return the weight count (including the baked&deleted target);
@@ -138,7 +147,7 @@ blendshape1.weight1 ÊÇÒ»¸öplugµÄÃû×Ö£¬ÆäÊµÕâ¸öweight1Ò²Í¬Ê±ÊÇ¶ÔÓ¦target sliderµÄ
 	
 	MPlug plugs = blendShapeNode.findPlug("weight", &status); 
 	assert( iWeightCount == plugs.numElements() ); // one weight <-> one "weight" plug
-	// Õâ¸ö²»Ò»¶¨³ÉÁ¢µÄ ÀıÈçÉÏÃæpCube3±»remove targetÁË or Ö±½Ó°´¼ü¡°Delete¡±ÁË. 
+	// è¿™ä¸ªä¸ä¸€å®šæˆç«‹çš„ ä¾‹å¦‚ä¸Šé¢pCube3è¢«remove targetäº† or ç›´æ¥æŒ‰é”®â€œDeleteâ€äº†. 
 	
 	for (unsigned int i = 0; i < iWeightCount; ++i)
 	{
@@ -158,18 +167,18 @@ blendshape1.weight1 ÊÇÒ»¸öplugµÄÃû×Ö£¬ÆäÊµÕâ¸öweight1Ò²Í¬Ê±ÊÇ¶ÔÓ¦target sliderµÄ
 ```
 
 
-Ò»°ãÇé¿öÏÂÎÒÃÇÊÇÍ¨¹ıÍÏ¶¯ÕâsliderÀ´µ÷blendshapeµÄĞ§¹û¡£¶ÔÓ¦µÄmel and c++ code: 
+ä¸€èˆ¬æƒ…å†µä¸‹æˆ‘ä»¬æ˜¯é€šè¿‡æ‹–åŠ¨è¿™slideræ¥è°ƒblendshapeçš„æ•ˆæœã€‚å¯¹åº”çš„mel and c++ code: 
 ```
 	setAttr "blendshape1.weight1" 0.5
 
 	weightPlug.setDouble( 0.5 ); // MPlug weightPlug; weightPlug.name() == "blendshape1.wieght1"; 
 ```
 
-Ò²¿ÉÒÔ°Ñ±ğµÄÖµconnectµ½Õâ¸ötarget weightÉÏÀ´, ÀıÈçÍ¨¹ı¶¯»­animation»òÕßlocatorµÈ¿ØÖÆtarget weightµÄÖµµÄ±ä»¯¡£Ã¿Ò»¸öconnectionÊÇÓÉsource plug and destination plug×é³ÉµÄ. ÔÚÉÏÃæµÄblendShape1Àı×ÓÉÏÔö¼ÓÒ»µã:
-½¨Ò»¸öplane1, ´ò¿ªWindow > Node Editor °Ñplane1µÄtranslateXÁ¬µ½blendShape1.weight1, °Ñplane1µÄtranslateYÁ¬µ½blendShape1.weight2, UIÉÏÕâÁ½¸ösliders¶¼±ä³É»ÆÉ«ÁË, DG´°¿ÚÖĞblendShape1Õâ¸önodeµÄĞÎ×´Ò²´Ó³¤·½ĞÎ±ä³ÉµÄÁâĞÎ. 
+ä¹Ÿå¯ä»¥æŠŠåˆ«çš„å€¼connectåˆ°è¿™ä¸ªtarget weightä¸Šæ¥, ä¾‹å¦‚é€šè¿‡åŠ¨ç”»animationæˆ–è€…locatorç­‰æ§åˆ¶target weightçš„å€¼çš„å˜åŒ–ã€‚æ¯ä¸€ä¸ªconnectionæ˜¯ç”±source plug and destination plugç»„æˆçš„. åœ¨ä¸Šé¢çš„blendShape1ä¾‹å­ä¸Šå¢åŠ ä¸€ç‚¹:
+å»ºä¸€ä¸ªplane1, æ‰“å¼€Window > Node Editor æŠŠplane1çš„translateXè¿åˆ°blendShape1.weight1, æŠŠplane1çš„translateYè¿åˆ°blendShape1.weight2, UIä¸Šè¿™ä¸¤ä¸ªsliderséƒ½å˜æˆé»„è‰²äº†, DGçª—å£ä¸­blendShape1è¿™ä¸ªnodeçš„å½¢çŠ¶ä¹Ÿä»é•¿æ–¹å½¢å˜æˆçš„è±å½¢. 
 ![Alt text](2013-08-14_maya_blendshape_fig_BS_with_connnection_DG_NodeEditor.PNG "Connections at DG and NodeEditor")
-ÉÏÃæµÄ¹ı³ÌÆäÊµÎÒÃÇ½¨Á¢ÁËÁ½¸öconnections. ÆäÖĞÒ»¸öconnectionÊÇ (pPlane1.translateX, blendshape1.weight1)£¬ÆäÖĞpPlane1.translateX³ÆÎªsource plug, blendShape1.weight1³ÆÎªdestination plug. 
-ÏÂÃæµÄ´úÂëÏÔÊ¾ÔõÃ´»ñµÃÒ»¸öblendShapeµÄplug, ÒÔ¼°ÕâĞ©plugµÄÁ¬½Óconnections: 
+ä¸Šé¢çš„è¿‡ç¨‹å…¶å®æˆ‘ä»¬å»ºç«‹äº†ä¸¤ä¸ªconnections. å…¶ä¸­ä¸€ä¸ªconnectionæ˜¯ (pPlane1.translateX, blendshape1.weight1)ï¼Œå…¶ä¸­pPlane1.translateXç§°ä¸ºsource plug, blendShape1.weight1ç§°ä¸ºdestination plug. 
+ä¸‹é¢çš„ä»£ç æ˜¾ç¤ºæ€ä¹ˆè·å¾—ä¸€ä¸ªblendShapeçš„plug, ä»¥åŠè¿™äº›plugçš„è¿æ¥connections: 
 ```
 	// given MFnDependencyNode blendShapeNode, and MStatus status;
 	MPlug plugs = blendShapeNode.findPlug("weight", &status); 
@@ -192,7 +201,7 @@ blendshape1.weight1 ÊÇÒ»¸öplugµÄÃû×Ö£¬ÆäÊµÕâ¸öweight1Ò²Í¬Ê±ÊÇ¶ÔÓ¦target sliderµÄ
 	
 ```
  
-¼ÙÈçÕâ¸ötarget weight¶ÔÓ¦µÄÄ£ĞÍtarget shape±»removeTargetÁË, ÄÇĞ©connection»¹ÔÚÂğ£¿²»ÔÚÁË£¬¿ÉÄÜÊÇ¸±×÷ÓÃside effect¡£ ¼ÙÈçÖØĞÂ°ÑÄ£ĞÍaddTarget»ØblendShape1£¬»¹ÏëÖØĞÂ°ÑÄÇĞ©¶Ï¿ªµÄconnectionÖØĞÂÁ¬ÉÏÄØ£¬·ñÔòÖ®Ç°keyµÄ¶¯»­µÈ¶¼Ê§Ğ§ÁË/
+å‡å¦‚è¿™ä¸ªtarget weightå¯¹åº”çš„æ¨¡å‹target shapeè¢«removeTargetäº†, é‚£äº›connectionè¿˜åœ¨å—ï¼Ÿä¸åœ¨äº†ï¼Œå¯èƒ½æ˜¯å‰¯ä½œç”¨side effectã€‚ å‡å¦‚é‡æ–°æŠŠæ¨¡å‹addTargetå›blendShape1ï¼Œè¿˜æƒ³é‡æ–°æŠŠé‚£äº›æ–­å¼€çš„connectioné‡æ–°è¿ä¸Šå‘¢ï¼Œå¦åˆ™ä¹‹å‰keyçš„åŠ¨ç”»ç­‰éƒ½å¤±æ•ˆäº†/
 ```
 	// target shape is removed from this blendshape for some reason.
 	// target shape is re-added into the blendshape. we want to 
@@ -200,11 +209,11 @@ blendshape1.weight1 ÊÇÒ»¸öplugµÄÃû×Ö£¬ÆäÊµÕâ¸öweight1Ò²Í¬Ê±ÊÇ¶ÔÓ¦target sliderµÄ
 	MString commandString = "connectAttr " + inPlug[i].name() + " " + weightPlug.name();
 	MGlobal::executeCommand(commandString, true); // true: display the result. 
 ```
-ÉÏÃæµÄ´úÂëÖĞÎÒÓÃÁËconnectAttrÕâ¸ömel command, Ã²ËÆMDGModifier::connect(,)Ò²ÓĞÏàËÆµÄ¹¦ÄÜ£¬µ«ÍøÉÏ²éÔÄÊ±ºòÕâ¸ö¶«Î÷Ò»°ãÊÇ·Åµ½Ä³¸öcustom command classÀïÃæÓÃµÄ£¬¶øÇÒ»¹Òª×Ô¶¨Òåundo/redoµÄº¯Êı£¬ÎÒ»¹Ã»ÊÔ¹ı¡£Ïà±È¶øÑÔ£¬Ö±½ÓÓÃmel¾ÍÃ»ÓĞÕâĞ©µ£ĞÄ¡£±¾À´UIÉÏµÄ²Ù×÷¸øÎÒµÄ¸Ğ¾õ¾ÍÊÇÓÃÏàÓ¦µÄ²ÎÊıÀ´µ÷ÓÃµ×ÏÂµÄmel commands (Script EditorsÍùÍùÏÔÊ¾ÕâĞ©ÃüÁîÀúÊ·), mel commandÔÙµ×ÏÂµ±È»¿ÉÄÜÊÇÓÃC++ º¯ÊıXXÔÚÊµÏÖµÄ¡£
+ä¸Šé¢çš„ä»£ç ä¸­æˆ‘ç”¨äº†connectAttrè¿™ä¸ªmel command, è²Œä¼¼MDGModifier::connect(,)ä¹Ÿæœ‰ç›¸ä¼¼çš„åŠŸèƒ½ï¼Œä½†ç½‘ä¸ŠæŸ¥é˜…æ—¶å€™è¿™ä¸ªä¸œè¥¿ä¸€èˆ¬æ˜¯æ”¾åˆ°æŸä¸ªcustom command classé‡Œé¢ç”¨çš„ï¼Œè€Œä¸”è¿˜è¦è‡ªå®šä¹‰undo/redoçš„å‡½æ•°ï¼Œæˆ‘è¿˜æ²¡è¯•è¿‡ã€‚ç›¸æ¯”è€Œè¨€ï¼Œç›´æ¥ç”¨melå°±æ²¡æœ‰è¿™äº›æ‹…å¿ƒã€‚æœ¬æ¥UIä¸Šçš„æ“ä½œç»™æˆ‘çš„æ„Ÿè§‰å°±æ˜¯ç”¨ç›¸åº”çš„å‚æ•°æ¥è°ƒç”¨åº•ä¸‹çš„mel commands (Script Editorså¾€å¾€æ˜¾ç¤ºè¿™äº›å‘½ä»¤å†å²), mel commandå†åº•ä¸‹å½“ç„¶å¯èƒ½æ˜¯ç”¨C++ å‡½æ•°XXåœ¨å®ç°çš„ã€‚
 UI operation -> mel command -> c++ XX function (not exposed to user); 
-¶ø¸ø³öÒ»Ğ©maya c++ api£¬¿ÉÄÜÒ²ÄÜÊµÏÖÄ³melÃüÁîËù×öµÄÊÂ£¬±Ï¾¹¼ÙÈçapi¹»ÓÃµÄ»°¾ÍÄÜ°ÑXXº¯Êı¶¼Ä£ÄâÒ»´Î£¬µ«ÊÇ¿ÉÄÜÓĞĞ©bugs. ËùÒÔÊÇ²»ÊÇÕâÑù±È½ÏºÃÄØ: 
-mel commandÓĞµÄ£¬¾ÍMGlobal::executeCommand(...); mel commandÊµÏÖÆğÀ´²»·½±ã or ÊµÏÖ²»ÁËµÄ(ÓĞÂğ£¿ÀıÈç×Ô¶¨ÒåµÄÄ³Ğ©²Ù×÷?) ²ÅÓÃmaya apiÀ´×ö. 
+è€Œç»™å‡ºä¸€äº›maya c++ apiï¼Œå¯èƒ½ä¹Ÿèƒ½å®ç°æŸmelå‘½ä»¤æ‰€åšçš„äº‹ï¼Œæ¯•ç«Ÿå‡å¦‚apiå¤Ÿç”¨çš„è¯å°±èƒ½æŠŠXXå‡½æ•°éƒ½æ¨¡æ‹Ÿä¸€æ¬¡ï¼Œä½†æ˜¯å¯èƒ½æœ‰äº›bugs. æ‰€ä»¥æ˜¯ä¸æ˜¯è¿™æ ·æ¯”è¾ƒå¥½å‘¢: 
+mel commandæœ‰çš„ï¼Œå°±MGlobal::executeCommand(...); mel commandå®ç°èµ·æ¥ä¸æ–¹ä¾¿ or å®ç°ä¸äº†çš„(æœ‰å—ï¼Ÿä¾‹å¦‚è‡ªå®šä¹‰çš„æŸäº›æ“ä½œ?) æ‰ç”¨maya apiæ¥åš. 
  
  
-Ò»¸ötarget shape±»ÓÃ»§Ö±½Ó°´"Delete" button É¾µô£¬Õâ¸ötarget shapeµÄĞÎ×´»á×Ô¶¯Ä¬ÈÏ±»bakeµ½blendshapeÀïÃæ£¬Ò²¾ÍÊÇËäÈ»sceneÖĞÃ»ÓĞÕâ¸öshapeÁË£¬µ«ÊÇËüµÄÓ°Ïì»¹ÊÇ±£´æÔÚÕâ¸öblendshapeÀïÃæ£¬¶ÔÓ¦µÄweight»¹ÊÇ´æÔÚµÄ¡£ÎÊÌâÀ´ÁË£¬¼ÙÈçÏëÉ¾µôÕâ¸öÃ»ÓĞtarget shapeµÄweightÔõÃ´°ìÄØ£¿
-ÀıÈç blendShape1(source: pCube1; targets: pCube2, pCube3, pCube4). °ÑpCube3 "Delete" button É¾µô£¬Òª°Ñ"pCube3" weightÈ¥µô. google "deleteBlendshapeByIndex" http://www.creativecrash.com/forums/rigging-character-setup/topics/delete-one-blendshape-target 
+ä¸€ä¸ªtarget shapeè¢«ç”¨æˆ·ç›´æ¥æŒ‰"Delete" button åˆ æ‰ï¼Œè¿™ä¸ªtarget shapeçš„å½¢çŠ¶ä¼šè‡ªåŠ¨é»˜è®¤è¢«bakeåˆ°blendshapeé‡Œé¢ï¼Œä¹Ÿå°±æ˜¯è™½ç„¶sceneä¸­æ²¡æœ‰è¿™ä¸ªshapeäº†ï¼Œä½†æ˜¯å®ƒçš„å½±å“è¿˜æ˜¯ä¿å­˜åœ¨è¿™ä¸ªblendshapeé‡Œé¢ï¼Œå¯¹åº”çš„weightè¿˜æ˜¯å­˜åœ¨çš„ã€‚é—®é¢˜æ¥äº†ï¼Œå‡å¦‚æƒ³åˆ æ‰è¿™ä¸ªæ²¡æœ‰target shapeçš„weightæ€ä¹ˆåŠå‘¢ï¼Ÿ
+ä¾‹å¦‚ blendShape1(source: pCube1; targets: pCube2, pCube3, pCube4). æŠŠpCube3 "Delete" button åˆ æ‰ï¼Œè¦æŠŠ"pCube3" weightå»æ‰. google "deleteBlendshapeByIndex" http://www.creativecrash.com/forums/rigging-character-setup/topics/delete-one-blendshape-target 

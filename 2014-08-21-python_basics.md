@@ -1,3 +1,12 @@
+Title: python basis 
+Date: 2014-08-21 10:20
+Modified: 2014-08-21 19:30
+Category: programming 
+Tags: 
+Slug: python basis 
+Authors: 
+Summary: 新接触python programming, 记录一些基础.
+
 --- 
 layout: post 
 title: python basics 

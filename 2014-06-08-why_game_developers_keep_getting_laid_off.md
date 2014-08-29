@@ -1,3 +1,12 @@
+Title: why game developers keep getting laid off 
+Date: 2014-06-08 10:20
+Modified: 2014-06-08 19:30
+Category: programming 
+Tags: 
+Slug: why game developers keep getting laid off 
+Authors: 
+Summary: 翻译why game developers keep getting laid off这个文章. 里面有些观点是挺有意思的.
+
 --- 
 layout: post 
 title: why game developers keep getting laid off 

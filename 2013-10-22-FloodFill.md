@@ -1,3 +1,12 @@
+Title: Flood fill 
+Date: 2013-10-22 10:20
+Modified: 2013-10-22 19:30
+Category: programming 
+Tags: 
+Slug: Flood fill
+Authors: 
+Summary: çœ‹è§someoneæåˆ°Flood fill algorithm, æƒ­æ„§ï¼Œä¸ç†Ÿæ‚‰è¿™ä¸ªåå­—ï¼Œäºæ˜¯Googleä¸€ä¸‹ï¼Œç«Ÿç„¶è·ŸBFSå¾ˆåƒï¼Œäºæ˜¯æƒ³ç€è¦ç®€å•å®ç°ä¸€ä¸‹ã€‚
+
 --- 
 layout: post 
 title: Flood fill 
@@ -7,19 +16,19 @@ categories: programming
 FloodFill simple implementation                        
 ----
 
-Oct. 22, 2013 ¿´¼ûsomeoneÌáµ½Flood fill algorithm, ²ÑÀ¢£¬²»ÊìÏ¤Õâ¸öÃû×Ö£¬ÓÚÊÇGoogleÒ»ÏÂ£¬¾¹È»¸úBFSºÜÏñ£¬ÓÚÊÇÏë×ÅÒª¼òµ¥ÊµÏÖÒ»ÏÂ¡£Ò»Ö±ÍÏ£¬ÍÏµ½ÁË×òÍí, Sunday, Nov. 4, ²ÅÅª³ö¸ö½á¹û¡£           
+Oct. 22, 2013 çœ‹è§someoneæåˆ°Flood fill algorithm, æƒ­æ„§ï¼Œä¸ç†Ÿæ‚‰è¿™ä¸ªåå­—ï¼Œäºæ˜¯Googleä¸€ä¸‹ï¼Œç«Ÿç„¶è·ŸBFSå¾ˆåƒï¼Œäºæ˜¯æƒ³ç€è¦ç®€å•å®ç°ä¸€ä¸‹ã€‚ä¸€ç›´æ‹–ï¼Œæ‹–åˆ°äº†æ˜¨æ™š, Sunday, Nov. 4, æ‰å¼„å‡ºä¸ªç»“æœã€‚           
 
-ÏÂÃæÕâÍ¼ÊÇÔÚWindows > PaintÈí¼şÖĞ»­µÄ£¬Ò»¸öÆæ¹ÖµÄĞÎ×´£¬¼ÙÈçÓÃPaintÈí¼şÖĞµÄfill¹¤¾ß¿ÉÒÔ°ÑÕâ¸öÆæ¹ÖµÄĞÎ×´ÌîÂúÄ³Ò»ÖÖÑÕÉ«¡£ÄÇ¼ÙÈçÊÖ¹¤ÊµÏÖ£¬ÔõÃ´¸ãÄØ?                 
+ä¸‹é¢è¿™å›¾æ˜¯åœ¨Windows > Paintè½¯ä»¶ä¸­ç”»çš„ï¼Œä¸€ä¸ªå¥‡æ€ªçš„å½¢çŠ¶ï¼Œå‡å¦‚ç”¨Paintè½¯ä»¶ä¸­çš„fillå·¥å…·å¯ä»¥æŠŠè¿™ä¸ªå¥‡æ€ªçš„å½¢çŠ¶å¡«æ»¡æŸä¸€ç§é¢œè‰²ã€‚é‚£å‡å¦‚æ‰‹å·¥å®ç°ï¼Œæ€ä¹ˆæå‘¢?                 
 ![Alt text](data/2013-10-20_Shape_to_fill.bmp "input shape")            
 
-ÏÂÃæÊÇ½á¹û£¬·Ö±ğÊÇÌîÁË10000´Î£¬20000´Î...µÄ½á¹û¡£
+ä¸‹é¢æ˜¯ç»“æœï¼Œåˆ†åˆ«æ˜¯å¡«äº†10000æ¬¡ï¼Œ20000æ¬¡...çš„ç»“æœã€‚
 
 ![Alt text](data/floodfill_out_s10000.bmp "output")            
 ![Alt text](data/floodfill_out_s20000.bmp "output")             
 ![Alt text](data/floodfill_out_s30000.bmp "output")            
 ![Alt text](data/floodfill_out_s80000.bmp "output")     
 
-´Ó³ÌĞòµÄ½á¹ûÀ´¿´£¬ÔÚÒ»¶¨´ÎÊıÖ®ºó¾ÍÌîÂúÁËÕû¸öÆæ¹ÖµÄĞÎ×´¡£ÈçÉÏÃæµÄ½á¹ûÖĞ£¬´Ó10000´Îµ½20000´ÎÀ©Õ¹µÄÇøÓòÊÇ·ñ¸ú´Ó20000µ½30000´ÎÍØÕ¹µÄÇøÓòÒ»Ñù´óÄØ£¬¸úÊ²Ã´ÓĞ¹Ø£¿(After some steps, the shape will be filled. From the result images aboved, the extended red region added during from 10000 to 20000 is the same as the region added during from 20000 to 30000? what is the reason behind that.)                    
+ä»ç¨‹åºçš„ç»“æœæ¥çœ‹ï¼Œåœ¨ä¸€å®šæ¬¡æ•°ä¹‹åå°±å¡«æ»¡äº†æ•´ä¸ªå¥‡æ€ªçš„å½¢çŠ¶ã€‚å¦‚ä¸Šé¢çš„ç»“æœä¸­ï¼Œä»10000æ¬¡åˆ°20000æ¬¡æ‰©å±•çš„åŒºåŸŸæ˜¯å¦è·Ÿä»20000åˆ°30000æ¬¡æ‹“å±•çš„åŒºåŸŸä¸€æ ·å¤§å‘¢ï¼Œè·Ÿä»€ä¹ˆæœ‰å…³ï¼Ÿ(After some steps, the shape will be filled. From the result images aboved, the extended red region added during from 10000 to 20000 is the same as the region added during from 20000 to 30000? what is the reason behind that.)                    
 
 New functions learned:            
 std::stoi

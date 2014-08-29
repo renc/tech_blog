@@ -1,53 +1,62 @@
+Title: Note of Maya programming 
+Date: 2014-04-01 10:20
+Modified: 2014-04-01 19:30
+Category: programming 
+Tags: 
+Slug: Note of Maya programming
+Authors: 
+Summary: å­¦mayaæ—¶å€™æœ‰äº›æ–°æ¦‚å¿µè¦è®°å½•ä¸€ä¸‹ï¼Œå¦åˆ™å¿˜å¾—å¿«. 
+
 --- 
 layout: post 
 title: Note of Maya programming 
 categories: programming computer graphics  
 --- 
 
-ÒıÑÔ
+å¼•è¨€
 ---- 
-Ñ§mayaÊ±ºòÓĞĞ©ĞÂ¸ÅÄîÒª¼ÇÂ¼Ò»ÏÂ£¬·ñÔòÍüµÃ¿ì. 
+å­¦mayaæ—¶å€™æœ‰äº›æ–°æ¦‚å¿µè¦è®°å½•ä¸€ä¸‹ï¼Œå¦åˆ™å¿˜å¾—å¿«. 
 
 
 Command 
 ---- 
-¶¨ÒåÃüÁîcmdµÄÓï·¨, ÀıÈçÄã¿ÉÄÜÏë¸øÃüÁîÌí¼ÓÒ»Ğ©flags. [ MPxCommand::newSyntax() ]
-ÓĞÁËÓï·¨, ÔÚ¾ßÌåÖ´ĞĞÕâ¸öÃüÁîµÄÊ±ºò, Ê×ÏÈµ±È»¾ÍÊÇ·Ö½âÃüÁî, ¿´ËüÊÇ·ñ°üº¬ÁËÄÄĞ©²ÎÊı. [doIt, parseArgs, argument list, argument data]
+å®šä¹‰å‘½ä»¤cmdçš„è¯­æ³•, ä¾‹å¦‚ä½ å¯èƒ½æƒ³ç»™å‘½ä»¤æ·»åŠ ä¸€äº›flags. [ MPxCommand::newSyntax() ]
+æœ‰äº†è¯­æ³•, åœ¨å…·ä½“æ‰§è¡Œè¿™ä¸ªå‘½ä»¤çš„æ—¶å€™, é¦–å…ˆå½“ç„¶å°±æ˜¯åˆ†è§£å‘½ä»¤, çœ‹å®ƒæ˜¯å¦åŒ…å«äº†å“ªäº›å‚æ•°. [doIt, parseArgs, argument list, argument data]
 
-·Öregular command and interactive command (tool command)Á½ÖÖ, ·Ö±ğ¶ÔÓ¦MPxCommand and MPxToolCommand. 
+åˆ†regular command and interactive command (tool command)ä¸¤ç§, åˆ†åˆ«å¯¹åº”MPxCommand and MPxToolCommand. 
 
 
 Context 
 ---- 
-ÀıÈç×ó±ßselect tool, paint select tool, move tool...»¹ÓĞpolygon/drag a cubeµÈ£¬ÆäÊµÃ¿Ò»Ñù¶¼ÊÇÒ»¸öcontext£¬ÓÚÊÇcontextºÃÏñ¸útool¹¤¾ßÊÇÒ»¸öÒâË¼¡£
-mel ÏÂ "currentCtx"Ñ¯ÎÊµ±Ç°contextÀàĞÍµÄobject. 
-grabUVContext // µ÷ÓÃÕâ¸öcontext command to create an object of this context;
-// Result, grabUVContext1; // objectµÄÃû×ÖÊÇgrabUVContext1;
+ä¾‹å¦‚å·¦è¾¹select tool, paint select tool, move tool...è¿˜æœ‰polygon/drag a cubeç­‰ï¼Œå…¶å®æ¯ä¸€æ ·éƒ½æ˜¯ä¸€ä¸ªcontextï¼Œäºæ˜¯contextå¥½åƒè·Ÿtoolå·¥å…·æ˜¯ä¸€ä¸ªæ„æ€ã€‚
+mel ä¸‹ "currentCtx"è¯¢é—®å½“å‰contextç±»å‹çš„object. 
+grabUVContext // è°ƒç”¨è¿™ä¸ªcontext command to create an object of this context;
+// Result, grabUVContext1; // objectçš„åå­—æ˜¯grabUVContext1;
 setToolTo grabUVContext1; // switch from current ctx to this new context object;
 
-contextÉæ¼°µÄ·¶Î§ºÜ¹ã:
-+ context command, Ò²¾ÍÊÇÔÚpluginÀïÃæ×¢²áregisterÒ»¸öcontextÊ±ºò£¬ÆäÊµÊÇÒ»¸öctx command. ÉÏÃæÄÇ¸ögrabUVContextÆäÊµÊÇÒ»¸öcmd£¬¶øÇÒÊÇÒ»¸öÌØÊâµÄcmdÀàĞÍ, ctx cmd; -q Ò²¾ÍÊÇqueryÏÂÒ²ÊÇ×÷ÎªÒ»¸öcmdÀ´ÓÃ. 
-+ context and interactive command, ÀıÈçmoveTool;         
-+ context and manipulator; Àı×ÓºÜ¶à.               
+contextæ¶‰åŠçš„èŒƒå›´å¾ˆå¹¿:
++ context command, ä¹Ÿå°±æ˜¯åœ¨pluginé‡Œé¢æ³¨å†Œregisterä¸€ä¸ªcontextæ—¶å€™ï¼Œå…¶å®æ˜¯ä¸€ä¸ªctx command. ä¸Šé¢é‚£ä¸ªgrabUVContextå…¶å®æ˜¯ä¸€ä¸ªcmdï¼Œè€Œä¸”æ˜¯ä¸€ä¸ªç‰¹æ®Šçš„cmdç±»å‹, ctx cmd; -q ä¹Ÿå°±æ˜¯queryä¸‹ä¹Ÿæ˜¯ä½œä¸ºä¸€ä¸ªcmdæ¥ç”¨. 
++ context and interactive command, ä¾‹å¦‚moveTool;         
++ context and manipulator; ä¾‹å­å¾ˆå¤š.               
               
 
 UI   
 ----  
-2014/7 ÒòÎªÒªÔÚmaya½çÃæµÄÄ³¸öshelfÉÏ¼Óbutton, ÓÚÊÇĞèÒªÁË½âÒ»ÏÂmelÀïÃæÔõÃ´½¨ui. 
-´óÖÂÊÇÒ»¸öwindow, ÏÂÃæÊÇlayout, ¿ÉÒÔÊÇ¸÷ÖÖ¸÷ÑùµÄlayout,  layoutÖ®¼ä¿ÉÄÜÓĞ¸¸×Ó¹ØÏµ£¬È»ºóÊÇbutton. 
-µ±Ç°ÖªµÀµÄbuttonÓĞ:
-shelfButton ¾ÍÊÇÄãÔÚ½çÃæÉÏPolygonÏÂÃæ¿ÉÒÔµã»÷ÁË¾Í½¨Ä£ĞÍµÄÄÇÖÖ;
-toolButton ¾ÍÊÇ½çÃæ×ó±ßµÄselect move rotate scaleµÈ. 
+2014/7 å› ä¸ºè¦åœ¨mayaç•Œé¢çš„æŸä¸ªshelfä¸ŠåŠ button, äºæ˜¯éœ€è¦äº†è§£ä¸€ä¸‹melé‡Œé¢æ€ä¹ˆå»ºui. 
+å¤§è‡´æ˜¯ä¸€ä¸ªwindow, ä¸‹é¢æ˜¯layout, å¯ä»¥æ˜¯å„ç§å„æ ·çš„layout,  layoutä¹‹é—´å¯èƒ½æœ‰çˆ¶å­å…³ç³»ï¼Œç„¶åæ˜¯button. 
+å½“å‰çŸ¥é“çš„buttonæœ‰:
+shelfButton å°±æ˜¯ä½ åœ¨ç•Œé¢ä¸ŠPolygonä¸‹é¢å¯ä»¥ç‚¹å‡»äº†å°±å»ºæ¨¡å‹çš„é‚£ç§;
+toolButton å°±æ˜¯ç•Œé¢å·¦è¾¹çš„select move rotate scaleç­‰. 
 ![Alt text](data/2014-06-25-UndoRedoStack.png "output")
-UIÀı×Ó window/tabLayout/shelfLayout/shelfButton; ÓÃsetParent .. ¿ÉÒÔ»Øµ½ÉÏÒ»¼¶layout. 
+UIä¾‹å­ window/tabLayout/shelfLayout/shelfButton; ç”¨setParent .. å¯ä»¥å›åˆ°ä¸Šä¸€çº§layout. 
 
-ÄÇÃ´ÔõÃ´add custom shelf or shelf button ÄØ?
+é‚£ä¹ˆæ€ä¹ˆadd custom shelf or shelf button å‘¢?
 
-·½·¨1. ÕÒµ½maya°²×°Â·¾¶\scripts\startup\Ä¿Â¼, ¿´¼ûÏÂÃæºÜ¶àshelf_xxx.mel, ÀıÈçshelf_Polygons.mel, shelf_Surfaces.mel, ...ÕâĞ©¾ÍÊÇmayaÆô¶¯Ê±ºò¼ÓÔØµÄ, Ò²¾ÍÊÇÎÒÃÇÔÚ½çÃæÉÏ¿´µ½µÄ.
-ÄÇÃ´ÎÒÃÇ¾Í¿ÉÒÔ³¢ÊÔÔÚÕâÂ·¾¶ÏÂÌí¼ÓÎÒÃÇ×Ô¼ºĞ´µÄshelf_yyy.melÁË¡£
-»òÕßÊÇÊÔÊÔ¡°MAYA_SHELF_PATH¡± environment variable?
+æ–¹æ³•1. æ‰¾åˆ°mayaå®‰è£…è·¯å¾„\scripts\startup\ç›®å½•, çœ‹è§ä¸‹é¢å¾ˆå¤šshelf_xxx.mel, ä¾‹å¦‚shelf_Polygons.mel, shelf_Surfaces.mel, ...è¿™äº›å°±æ˜¯mayaå¯åŠ¨æ—¶å€™åŠ è½½çš„, ä¹Ÿå°±æ˜¯æˆ‘ä»¬åœ¨ç•Œé¢ä¸Šçœ‹åˆ°çš„.
+é‚£ä¹ˆæˆ‘ä»¬å°±å¯ä»¥å°è¯•åœ¨è¿™è·¯å¾„ä¸‹æ·»åŠ æˆ‘ä»¬è‡ªå·±å†™çš„shelf_yyy.meläº†ã€‚
+æˆ–è€…æ˜¯è¯•è¯•â€œMAYA_SHELF_PATHâ€ environment variable?
 
-·½·¨2. 
+æ–¹æ³•2. 
 
 References: 
 + mel command document: window, tabLayout, shelfLayout, shelfButton. 

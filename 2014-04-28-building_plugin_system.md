@@ -1,39 +1,48 @@
+Title: build simple ui using pySide 
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: programming 
+Tags: 
+Slug: How to build a plugin system 
+Authors: 
+Summary: Applications normally support custom plugins, how to do that?
+
 --- 
 layout: post 
 title: How to build a plugin system 
 categories: programming 
 --- 
 
-ºÜ¶àÈí¼ş¶¼Ìá¹©ÁËAPI¸øcustomer, ¿ÉÒÔĞ´pluginÀ´À©Õ¹Ô­À´µÄ³ÌĞò. 
+å¾ˆå¤šè½¯ä»¶éƒ½æä¾›äº†APIç»™customer, å¯ä»¥å†™pluginæ¥æ‰©å±•åŸæ¥çš„ç¨‹åº. 
 
-ÀıÈçmudboxºÍmaya. ´ÓmudboxµÄAPIÀ´¿´£¬Ò»°ã¿ÉÒÔÊµÏÖ
-- ×Ô¶¨Òåoperation, support undo and redo;
-- ×Ô¶¨ÒåÄ³ÖÖbrush (operation); 
-- ¼Ì³ĞÊµÏÖÄ³¸öÀà£¬´úÌæÔ­ÓĞµÄÄÇ¸ö. ÀıÈçmap extraction? 
-µ±Ç°½Ó´¥µ½µÄmaya api²»¶à£¬ÖªµÀplugin¿ÉÒÔÊµÏÖcontext and manipulator.
+ä¾‹å¦‚mudboxå’Œmaya. ä»mudboxçš„APIæ¥çœ‹ï¼Œä¸€èˆ¬å¯ä»¥å®ç°
+- è‡ªå®šä¹‰operation, support undo and redo;
+- è‡ªå®šä¹‰æŸç§brush (operation); 
+- ç»§æ‰¿å®ç°æŸä¸ªç±»ï¼Œä»£æ›¿åŸæœ‰çš„é‚£ä¸ª. ä¾‹å¦‚map extraction? 
+å½“å‰æ¥è§¦åˆ°çš„maya apiä¸å¤šï¼ŒçŸ¥é“pluginå¯ä»¥å®ç°context and manipulator.
 
-ÎÊÌâ¾ÍÀ´ÁË, Ò»¸ö¼òµ¥µÄplugin systemÊÇÔõÃ´Éè¼ÆºÍÊµÏÖµÄÄØ? 
+é—®é¢˜å°±æ¥äº†, ä¸€ä¸ªç®€å•çš„plugin systemæ˜¯æ€ä¹ˆè®¾è®¡å’Œå®ç°çš„å‘¢? 
 
 case 1: 
 Reference: Using Dynamic Link Libraries (DLL) to Create Plug-Ins, by Jeremiah van Oosten. 
 http://3dgep.com/?p=1759 
 
-ÏµÍ³°üÀ¨Èı²¿·Ö, ÎÒÃÇ³£¿´µ½µÄ(1)ÔÚÔËĞĞµÄ.exe, (2)Ä³¸ö¿ÉÒÔ±»¼ÓÔØµÄplugin, »¹ÓĞµ×ÏÂ¿ÉÄÜ²»ÈİÒ×²ì¾õµÄ(3)±»Ç°Á½ÕßËù¹²ÓÃµÄ£¬Æğµ½Á¬½Ó¹ØÏµµÄdll. ÈıÕßµÄ½á¹¹ÀàËÆÓÚ: 
+ç³»ç»ŸåŒ…æ‹¬ä¸‰éƒ¨åˆ†, æˆ‘ä»¬å¸¸çœ‹åˆ°çš„(1)åœ¨è¿è¡Œçš„.exe, (2)æŸä¸ªå¯ä»¥è¢«åŠ è½½çš„plugin, è¿˜æœ‰åº•ä¸‹å¯èƒ½ä¸å®¹æ˜“å¯Ÿè§‰çš„(3)è¢«å‰ä¸¤è€…æ‰€å…±ç”¨çš„ï¼Œèµ·åˆ°è¿æ¥å…³ç³»çš„dll. ä¸‰è€…çš„ç»“æ„ç±»ä¼¼äº: 
    
   ![Alt text](data/how_plugin_system_work.PNG "plugin system example1")
-¿É¼ûCommonDLL¼´±»app.exeËùµ÷ÓÃ£¬Ò²±»ÆäËüËùÓĞpluginËùÊ¹ÓÃ.
+å¯è§CommonDLLå³è¢«app.exeæ‰€è°ƒç”¨ï¼Œä¹Ÿè¢«å…¶å®ƒæ‰€æœ‰pluginæ‰€ä½¿ç”¨.
 
-ÔÚÊµÏÖÖĞÓöµ½µÄquestions: 
-- ÔõÃ´exportÒ»¸ödll AÀïÃæµÄĞÅÏ¢µ½ÍâÃæ£¬ÈÃ±ğµÄdll BÄÜ¹»Ê¹ÓÃ? 
-- C++±àÒëµÄÊ±ºò£¬»áÉæ¼°Ò»¸ömanagling nameµÄÎÊÌâ. ÕâÊ±ºò¾ÍÒª»Øµ½extern "C"
+åœ¨å®ç°ä¸­é‡åˆ°çš„questions: 
+- æ€ä¹ˆexportä¸€ä¸ªdll Aé‡Œé¢çš„ä¿¡æ¯åˆ°å¤–é¢ï¼Œè®©åˆ«çš„dll Bèƒ½å¤Ÿä½¿ç”¨? 
+- C++ç¼–è¯‘çš„æ—¶å€™ï¼Œä¼šæ¶‰åŠä¸€ä¸ªmanagling nameçš„é—®é¢˜. è¿™æ—¶å€™å°±è¦å›åˆ°extern "C"
 
-ÕûÀíµÃµ½µÄsource code: https://github.com/renc/plugins_system_example1/
+æ•´ç†å¾—åˆ°çš„source code: https://github.com/renc/plugins_system_example1/
 
 case 2: 
 Reference: Nuclex Plugin Architecture
-¸üÉÏÃæµÄCommonDLLÀı×Ó½á¹¹Ò»Ñù£¬¶àÁË¿¼ÂÇplugin version. 
+æ›´ä¸Šé¢çš„CommonDLLä¾‹å­ç»“æ„ä¸€æ ·ï¼Œå¤šäº†è€ƒè™‘plugin version. 
 
-ÆäËü²Î¿¼references: 
+å…¶å®ƒå‚è€ƒreferences: 
 Qt plugin; 
 Building an Engine Plugin System, by Niklas Frykholm, from bitsquid. http://www.altdevblogaday.com/ 
 

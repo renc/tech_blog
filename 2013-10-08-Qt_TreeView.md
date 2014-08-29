@@ -1,20 +1,29 @@
+Title: Tree view at Qt 
+Date: 2013-10-08 10:20
+Modified: 2013-10-08 10:20
+Category: programming
+Tags: qt
+Slug: Tree view at Qt 
+Authors: renc
+Summary: Qtä¸­çš„TreeViewå¾ˆå¤æ‚, è®°å½•ä¸€ä¸‹è‡ªå·±çš„ç†è§£. 
+
 --- 
 layout: post 
 title: Tree view at Qt 
 categories: programming 
 --- 
 
-ÒıÑÔ
+å¼•è¨€
 ----
-> Model/View/itemµÄ¹ØÏµ¾ÍÓĞµãÏñContainer/Algorithm/IteratorµÄ¹ØÏµ¡£
-> Tree viewÊôÓÚModel/View ProgrammingµÄÒ»²¿·Ö¡£ÓĞĞ©
+> Model/View/itemçš„å…³ç³»å°±æœ‰ç‚¹åƒContainer/Algorithm/Iteratorçš„å…³ç³»ã€‚
+> Tree viewå±äºModel/View Programmingçš„ä¸€éƒ¨åˆ†ã€‚æœ‰äº›
 > 
 
-Index ´øÉÏÏÂ²ã¼¶½á¹¹µÄ¶şÎ¬Ë÷Òı 
+Index å¸¦ä¸Šä¸‹å±‚çº§ç»“æ„çš„äºŒç»´ç´¢å¼• 
 ----
-QModelIndex()±íÊ¾modelÖĞ×îÉÏ²ãµÄroot itemµÄindex, QModelIndex().isValid() == 0. 
+QModelIndex()è¡¨ç¤ºmodelä¸­æœ€ä¸Šå±‚çš„root itemçš„index, QModelIndex().isValid() == 0. 
 
-itemÖ®Ç°ÓĞÉÏÏÂ²ã¼¶¹ØÏµ£¬index.parent()»ñÈ¡indexµÄparent. µ±index.parent().isValid() == false£¬±íÊ¾Õâ¸öitemµÄparent¾ÍÊÇroot item. ÕâĞ©items±»³ÆÎªtop-level itmes. 
+itemä¹‹å‰æœ‰ä¸Šä¸‹å±‚çº§å…³ç³»ï¼Œindex.parent()è·å–indexçš„parent. å½“index.parent().isValid() == falseï¼Œè¡¨ç¤ºè¿™ä¸ªitemçš„parentå°±æ˜¯root item. è¿™äº›itemsè¢«ç§°ä¸ºtop-level itmes. 
 
 to retrieve data from a model:
 for (int row = 0; row < model->rowCount(parentIndex); ++row)
@@ -25,64 +34,64 @@ for (int row = 0; row < model->rowCount(parentIndex); ++row)
         // Display the text in a widget.
 	}
 }
-¶ÔÓÚtree viewÖĞµÄÃ¿Ò»¸örow£¬ËüÃÇµÄcolumnÊıÄ¿¶¼ÊÇÒ»ÑùµÄÂğ£¿
-Ã¿Ò»¸öindexµÄroleµÄÀàĞÍ¶¼Ò»Ñù? Çë¿´ÊÇ·ñÓĞQVariant CustomModel::data(const QModelIndex &, int role) const {} Ã²ËÆÒ»¸öindexÀïÃæÓĞ¸÷ÖÖ¸÷ÑùµÄrole£¬Äã¿ÉÒÔ·ÅÊ²Ã´¶«Î÷¶¼ok£¬Ö»ÒªÄãÔÚÕâ¸öº¯ÊıÖĞ¸ø¶ÔÓ¦µÄrole·µ»ØºÏÊÊµÄÊı¾İ¡£Õâ¸öº¯ÊıÔÚ´úÂë·Ç³£³£ÓÃ£¡ÀıÈçºóÃæCustomDelegate::paint()ÖĞ¾ÍÊÇ¸ù¾İdataÖµÀ´ÅĞ¶ÏÔõÃ´»­ºÍ»­Ê²Ã´µÄ¡£
-Question: QVariant QModelIndex::data(role); Õâ¸öº¯Êı¸úmodel->data(index, role)½á¹ûÒ»ÑùµÄÂğ? ÕâÀïÓĞ¸öĞ¡Ï¸½Ú, modelÊÇÖ¸Õë²ÅÄÜdata()º¯Êıoverride. 
-¸údata(...)º¯ÊıµÄ¶ÔÓ¦µÄÁíÒ»º¯ÊıÊÇCustomModel::setData(...); Õâ¸öº¯ÊıÒ»°ãÓÃµÄµØ·½²»¶à£¬¾ÍÔÚ¸ømodel²åÈëĞÂĞĞinsertRow()Ö®ºó¸øÃ¿Ò»¸öindex²åÈë²»Í¬µÄÊı¾İÊ±ºò»áÓÃµ½¡£
+å¯¹äºtree viewä¸­çš„æ¯ä¸€ä¸ªrowï¼Œå®ƒä»¬çš„columnæ•°ç›®éƒ½æ˜¯ä¸€æ ·çš„å—ï¼Ÿ
+æ¯ä¸€ä¸ªindexçš„roleçš„ç±»å‹éƒ½ä¸€æ ·? è¯·çœ‹æ˜¯å¦æœ‰QVariant CustomModel::data(const QModelIndex &, int role) const {} è²Œä¼¼ä¸€ä¸ªindexé‡Œé¢æœ‰å„ç§å„æ ·çš„roleï¼Œä½ å¯ä»¥æ”¾ä»€ä¹ˆä¸œè¥¿éƒ½okï¼Œåªè¦ä½ åœ¨è¿™ä¸ªå‡½æ•°ä¸­ç»™å¯¹åº”çš„roleè¿”å›åˆé€‚çš„æ•°æ®ã€‚è¿™ä¸ªå‡½æ•°åœ¨ä»£ç éå¸¸å¸¸ç”¨ï¼ä¾‹å¦‚åé¢CustomDelegate::paint()ä¸­å°±æ˜¯æ ¹æ®dataå€¼æ¥åˆ¤æ–­æ€ä¹ˆç”»å’Œç”»ä»€ä¹ˆçš„ã€‚
+Question: QVariant QModelIndex::data(role); è¿™ä¸ªå‡½æ•°è·Ÿmodel->data(index, role)ç»“æœä¸€æ ·çš„å—? è¿™é‡Œæœ‰ä¸ªå°ç»†èŠ‚, modelæ˜¯æŒ‡é’ˆæ‰èƒ½data()å‡½æ•°override. 
+è·Ÿdata(...)å‡½æ•°çš„å¯¹åº”çš„å¦ä¸€å‡½æ•°æ˜¯CustomModel::setData(...); è¿™ä¸ªå‡½æ•°ä¸€èˆ¬ç”¨çš„åœ°æ–¹ä¸å¤šï¼Œå°±åœ¨ç»™modelæ’å…¥æ–°è¡ŒinsertRow()ä¹‹åç»™æ¯ä¸€ä¸ªindexæ’å…¥ä¸åŒçš„æ•°æ®æ—¶å€™ä¼šç”¨åˆ°ã€‚
 
-Delegate Âú×ãÄãÌØ±ğµÄÍ¼°¸ºÍ½»»¥ĞèÒª 
+Delegate æ»¡è¶³ä½ ç‰¹åˆ«çš„å›¾æ¡ˆå’Œäº¤äº’éœ€è¦ 
 ----
-Ç°Ìá: install a custom delegate for a view. 
-ÈÎÎñ: render and editting. 
+å‰æ: install a custom delegate for a view. 
+ä»»åŠ¡: render and editting. 
 
 To render:
 	Delegate::paint().
 	
 To provide editing facilities:
 	QWidget *Delegate::createEditor(QWidget *, ..., const QModelIndex &);
-	ÎªÄ³Ò»¸ö or Ã¿Ò»¸öindexÌá¹©editor? Can we create different editors depending on the model index supplied by the view ? ¼ÙÈçÄ³Ğ©²»ĞĞ±»edit¶øÖ»ÊÇ¿Õ°×ÄØ? 
+	ä¸ºæŸä¸€ä¸ª or æ¯ä¸€ä¸ªindexæä¾›editor? Can we create different editors depending on the model index supplied by the view ? å‡å¦‚æŸäº›ä¸è¡Œè¢«editè€Œåªæ˜¯ç©ºç™½å‘¢? 
 	
-	ÕâĞ©new QWidget objÓ¦¸ÃÊÇ±»viewËùmanagerµÄ£¬±¾À´¿ÉÄÜ¾ÍÊÇview->delegate->createEditor for a given index.
+	è¿™äº›new QWidget objåº”è¯¥æ˜¯è¢«viewæ‰€managerçš„ï¼Œæœ¬æ¥å¯èƒ½å°±æ˜¯view->delegate->createEditor for a given index.
 	
-	Ò»µ©ÔÚÕâÀï¸øÄ³¸öitem/index½¨Á¢ÁËÒ»¸öQWidget objÒÔºó£¬ÄÇ¸öviewÃ²ËÆ¾Í»á×Ô¶¯°ÑÕâ¸öindex¸úËüµÄQWidget obj¹ØÁªÆğÀ´£¬ÎÒÃÇ²»ĞèÒªµ£ĞÄ£¬¶øÊÇ¿¼ÂÇÓĞÁËÕâ¸ö¹ØÁªÖ®ºóÔõÃ´À´ (a) copy the model data into the editor, Delegate::setEditorData(QWidget *, const QModelIndex &) const, ²ÎÊıµÄÁ½Õß¾ÍÊÇview¸øÎÒÃÇµÄ, index¸ú widgetÒÑ¾­Ò»Ò»¶ÔÓ¦ºÃµÄ. (b) when user has finished editting the value in the widget, the view asks the delegate to store the edited value in the model by calling Delegate::setModelData(QWidget *, model, index) const; ÕâÀïµÄ(a and b)¾ÍÊÇÁ½¸ö·½Ïòeditor <-> model/index.  
+	ä¸€æ—¦åœ¨è¿™é‡Œç»™æŸä¸ªitem/indexå»ºç«‹äº†ä¸€ä¸ªQWidget objä»¥åï¼Œé‚£ä¸ªviewè²Œä¼¼å°±ä¼šè‡ªåŠ¨æŠŠè¿™ä¸ªindexè·Ÿå®ƒçš„QWidget objå…³è”èµ·æ¥ï¼Œæˆ‘ä»¬ä¸éœ€è¦æ‹…å¿ƒï¼Œè€Œæ˜¯è€ƒè™‘æœ‰äº†è¿™ä¸ªå…³è”ä¹‹åæ€ä¹ˆæ¥ (a) copy the model data into the editor, Delegate::setEditorData(QWidget *, const QModelIndex &) const, å‚æ•°çš„ä¸¤è€…å°±æ˜¯viewç»™æˆ‘ä»¬çš„, indexè·Ÿ widgetå·²ç»ä¸€ä¸€å¯¹åº”å¥½çš„. (b) when user has finished editting the value in the widget, the view asks the delegate to store the edited value in the model by calling Delegate::setModelData(QWidget *, model, index) const; è¿™é‡Œçš„(a and b)å°±æ˜¯ä¸¤ä¸ªæ–¹å‘editor <-> model/index.  
 	
 Question: in the delegate class, how to get its view ? try to get the QObject *parent() first and cast it to the QTreeView or custom view type.
 	
 	
 Render
 ----
-Scenior: Ò»°ãÊÇÔÚ×Ô¶¨ÒåCustomModel, CustomView, CustomeDelegateµÄÖ®ºó²Å¿¼ÂÇ×Ô¼ºÒªÔõÃ´»­Tree viewÖĞµÄ¶«Î÷. 
+Scenior: ä¸€èˆ¬æ˜¯åœ¨è‡ªå®šä¹‰CustomModel, CustomView, CustomeDelegateçš„ä¹‹åæ‰è€ƒè™‘è‡ªå·±è¦æ€ä¹ˆç”»Tree viewä¸­çš„ä¸œè¥¿. 
 
 CustomView::paintEvent(QPaintEvent *)
 	drawTree(...);
-		drawRow(QPainter *, const option, const index); ¸ÉÊ²Ã´µÄÄØ?
-			Ã²ËÆ¿ÉÒÔÑ¡Ôñ¸øÌØ¶¨µÄindex (item)ÌîÒ»Ğ©±³¾°, È»ºóQTreeView(...)×öÄ¬ÈÏ»­¡£
+		drawRow(QPainter *, const option, const index); å¹²ä»€ä¹ˆçš„å‘¢?
+			è²Œä¼¼å¯ä»¥é€‰æ‹©ç»™ç‰¹å®šçš„index (item)å¡«ä¸€äº›èƒŒæ™¯, ç„¶åQTreeView(...)åšé»˜è®¤ç”»ã€‚
 			drawBranches(QPainter *, const QRect &rect, const index) const;
 			delegate->paint(...);
 			
-¿É¼ûÊ×ÏÈÊÇÒ»ĞĞÒ»ĞĞµØ»­³öÀ´µÄ. ÏÈ»­branch·ÖÖ¦£¬È»ºóÔÚdelegate->paint()»­ÄÚÈİ¡£
+å¯è§é¦–å…ˆæ˜¯ä¸€è¡Œä¸€è¡Œåœ°ç”»å‡ºæ¥çš„. å…ˆç”»branchåˆ†æï¼Œç„¶ååœ¨delegate->paint()ç”»å†…å®¹ã€‚
 D:\Qt\Qt5.1.0\5.1.0\Src\qtbase\src\widgets\itemviews\qtreeview.cpp for details.
 
 darwBranches(..., const QRect &rect, ...)
-	ÔÚ·ÖÖ¦ÖĞÏÂÒ»¼¶»áÏà¶ÔÓÚÉÏÒ»¼¶×öÒ»¸öÍùÓÒ±ßËõ½ø£¬setIndentation(int)º¯Êı¿ØÖÆËõ½øµÄ¶àÉÙ¡£¶ørectÕâ¸öÇøÓòÊÇ×öÕâÒ»ĞĞµÄ×ó±ßÍùÓÒ±ß¼ÓÉÏÃ¿Ò»´ÎµÄËõ½øËùµÃ¡£×îÉÏÒ»²ãtop-level ÊÇ´Óroot-itemËõ½øÒ»¼¶ËùµÃ¡£¶øÇÒexpand/collapseµÄevent¶¼ÊÇÖ»ÔÚ»­branchÕâ¸öÇøÓòÉÏÏìÓ¦µÄ¡£
-	ÎÊÌâÀ´ÁË£¬ÉÏÃæµÄËõ½øÊÇËùÒÔlevel¶¼Ò»ÑùµÄ£¬¿É·ñ²»Í¬levelÓÃ²»Í¬´óĞ¡µÄËõ½øÄØ? Î´½â¡£
+	åœ¨åˆ†æä¸­ä¸‹ä¸€çº§ä¼šç›¸å¯¹äºä¸Šä¸€çº§åšä¸€ä¸ªå¾€å³è¾¹ç¼©è¿›ï¼ŒsetIndentation(int)å‡½æ•°æ§åˆ¶ç¼©è¿›çš„å¤šå°‘ã€‚è€Œrectè¿™ä¸ªåŒºåŸŸæ˜¯åšè¿™ä¸€è¡Œçš„å·¦è¾¹å¾€å³è¾¹åŠ ä¸Šæ¯ä¸€æ¬¡çš„ç¼©è¿›æ‰€å¾—ã€‚æœ€ä¸Šä¸€å±‚top-level æ˜¯ä»root-itemç¼©è¿›ä¸€çº§æ‰€å¾—ã€‚è€Œä¸”expand/collapseçš„eventéƒ½æ˜¯åªåœ¨ç”»branchè¿™ä¸ªåŒºåŸŸä¸Šå“åº”çš„ã€‚
+	é—®é¢˜æ¥äº†ï¼Œä¸Šé¢çš„ç¼©è¿›æ˜¯æ‰€ä»¥leveléƒ½ä¸€æ ·çš„ï¼Œå¯å¦ä¸åŒlevelç”¨ä¸åŒå¤§å°çš„ç¼©è¿›å‘¢? æœªè§£ã€‚
 example:
 --level0
 ----level1
 ------level2
 the indentation for this is 2 (--). 
 
-¼ÙÈçÏë°Ñlevel0Ç°ÃæµÄËõ½øÈ¥µô£¬ÊÔÊÔQTreeView::setRootIsDecorated(false);
+å‡å¦‚æƒ³æŠŠlevel0å‰é¢çš„ç¼©è¿›å»æ‰ï¼Œè¯•è¯•QTreeView::setRootIsDecorated(false);
 
 
 
 Read-Only access : (Qt::ItemIsEnabled | Qt::ItemIsSelectable)
-Editable items: Qt::ItemIsEditable | (Qt::ItemIsEnabled | Qt::ItemIsSelectable) ÊÇÔÚRead-Only access»ù´¡ÉÏ¼ÓµÄ. 
-ÕâÀïÓĞÒ»µã¹Û²ì±È½ÏÖØÒª£¬¼ÙÈçflagÀïÃæ²»°üº¬Qt::ItemIsEnabled, ÄÇÃ´Õâ¸öitem»ù±¾ÉÏ²»ÄÜ¸ÉÉ¶µÄÁË, ÀıÈç²»ÄÜeditable¡£ 
+Editable items: Qt::ItemIsEditable | (Qt::ItemIsEnabled | Qt::ItemIsSelectable) æ˜¯åœ¨Read-Only accessåŸºç¡€ä¸ŠåŠ çš„. 
+è¿™é‡Œæœ‰ä¸€ç‚¹è§‚å¯Ÿæ¯”è¾ƒé‡è¦ï¼Œå‡å¦‚flagé‡Œé¢ä¸åŒ…å«Qt::ItemIsEnabled, é‚£ä¹ˆè¿™ä¸ªitemåŸºæœ¬ä¸Šä¸èƒ½å¹²å•¥çš„äº†, ä¾‹å¦‚ä¸èƒ½editableã€‚ 
 
-Drag & Drop: °ÑÒ»¸öitem dragµ½ÁíÒ»¸öitemÉÏÃæ£¬ÓĞĞ©ÊÇ½ÓÊÜ£¬ÓĞĞ©ÊÇ²»½ÓÊÜµÄ£¬ÎªÊ²Ã´ÄØ£¿
-Model::flags(const QModelIndex &) contain the Qt::ItemIsDragEnabled and Qt::ItemIsDropEnabled. Ç°Ìáµ±È»ÊÇÒÑ¾­°üÀ¨ÉÏÃæÌáµ½µÄ(Qt::ItemIsEnabled | Qt::ItemIsSelectable),ÎÒÊÔ¹ı°ÑQt::ItemIsEnabledÈ¥µô£¬Õâ¸öitem¾Í²»ÄÜ±»Ñ¡ÔñÁË, Ã²ËÆ¾Í²»ÏìÓ¦mouse eventÁË¡£
-ÔÚViewÀïÃæ»¹ÓĞÒ»Ğ©ÉèÖÃsetDragDropMode(QAbstractItemView::DragDrop); setDragEnabled(true); setAcceptDrops(true); setDropIndicatorShown(true);
-debugÊ±ºò¿´µ½¾ßÌåµÄº¯ÊıÁ÷ÊÇ: mouse move -> mouseMoveEvent() -> °´×ÅLMBÍÏ¶¯-> startDrag() -> dragEnterEvent() -> dragMoveEvent() -> drop the item -> dropEvent()
+Drag & Drop: æŠŠä¸€ä¸ªitem dragåˆ°å¦ä¸€ä¸ªitemä¸Šé¢ï¼Œæœ‰äº›æ˜¯æ¥å—ï¼Œæœ‰äº›æ˜¯ä¸æ¥å—çš„ï¼Œä¸ºä»€ä¹ˆå‘¢ï¼Ÿ
+Model::flags(const QModelIndex &) contain the Qt::ItemIsDragEnabled and Qt::ItemIsDropEnabled. å‰æå½“ç„¶æ˜¯å·²ç»åŒ…æ‹¬ä¸Šé¢æåˆ°çš„(Qt::ItemIsEnabled | Qt::ItemIsSelectable),æˆ‘è¯•è¿‡æŠŠQt::ItemIsEnabledå»æ‰ï¼Œè¿™ä¸ªitemå°±ä¸èƒ½è¢«é€‰æ‹©äº†, è²Œä¼¼å°±ä¸å“åº”mouse eventäº†ã€‚
+åœ¨Viewé‡Œé¢è¿˜æœ‰ä¸€äº›è®¾ç½®setDragDropMode(QAbstractItemView::DragDrop); setDragEnabled(true); setAcceptDrops(true); setDropIndicatorShown(true);
+debugæ—¶å€™çœ‹åˆ°å…·ä½“çš„å‡½æ•°æµæ˜¯: mouse move -> mouseMoveEvent() -> æŒ‰ç€LMBæ‹–åŠ¨-> startDrag() -> dragEnterEvent() -> dragMoveEvent() -> drop the item -> dropEvent()
 
 

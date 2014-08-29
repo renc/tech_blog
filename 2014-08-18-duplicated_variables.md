@@ -1,3 +1,12 @@
+Title: conflict by duplicated variables 
+Date: 2014-08-18 10:20
+Modified: 2014-08-18 19:30
+Category: programming 
+Tags: 
+Slug: conflict by duplicated variables 
+Authors: 
+Summary: 用多于一个变量来表示一个状态, 变量之间很容易不一致呢.
+
 --- 
 layout: post 
 title: conflict by duplicated variables  

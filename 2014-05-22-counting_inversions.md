@@ -1,3 +1,12 @@
+Title: algo - counting inversions
+Date: 2014-05-22 10:20
+Modified: 2014-05-22 19:30
+Category: programming 
+Tags: 
+Slug: algo - counting inversions
+Authors: 
+Summary: 算法练习: counting inversions
+
 --- 
 layout: post 
 title: algo - counting inversions 

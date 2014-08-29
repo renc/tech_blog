@@ -1,15 +1,19 @@
---- 
-layout: post 
-title: Do and redo ºÎÆäÏàËÆ 
-categories: programming 
----  
+Title: Do and redo are similiar  
+Date: 2014-04-14 10:20 
+Modified: 2014-04-14 19:30 
+Category: programming 
+Tags: 
+Slug: Do and redo are similiar  
+Authors: 
+Summary: Do and redo are so similiar that they can share code.
 
-ÔÚÑ§maya/MPxCommand, µ±Ò»¸ö²Ù×÷ĞèÒªÖ§³Öundo/redoµÄÊ±ºò£¬ÓÃ»§²Ù×÷µÄ´ÎĞò¿ÉÄÜÊÇ: 
+
+åœ¨å­¦maya/MPxCommand, å½“ä¸€ä¸ªæ“ä½œéœ€è¦æ”¯æŒundo/redoçš„æ—¶å€™ï¼Œç”¨æˆ·æ“ä½œçš„æ¬¡åºå¯èƒ½æ˜¯: 
 - do sth -> undo it, or 
 - do sth -> undo it -> redo it;
-ÔÚÊµÏÖµÄÊ±ºò»á·¢ÏÖdo sth ¸ú redo sthµÄ´úÂë»ù±¾Ò»Ñù°¡£¬ÄÇµ±È»ÏëĞ´Ò»¸ö¶¼±»do and redoµ÷ÓÃµÄº¯Êı¾ÍºÃÁË£¬±ÜÃâ´úÂëÖØ¸´Âï¡£
+åœ¨å®ç°çš„æ—¶å€™ä¼šå‘ç°do sth è·Ÿ redo sthçš„ä»£ç åŸºæœ¬ä¸€æ ·å•Šï¼Œé‚£å½“ç„¶æƒ³å†™ä¸€ä¸ªéƒ½è¢«do and redoè°ƒç”¨çš„å‡½æ•°å°±å¥½äº†ï¼Œé¿å…ä»£ç é‡å¤å˜›ã€‚
 
-maya/devkitµÄÀı×ÓËùÊ¹ÓÃµÄ·½·¨ÊÇ:
+maya/devkitçš„ä¾‹å­æ‰€ä½¿ç”¨çš„æ–¹æ³•æ˜¯:
 ```
 //code  
 // inside class CommandXY 
@@ -23,9 +27,9 @@ virtual MStatus doIt( const MArglist & )
 virtual MStatus redoIt() { do the actually command operation here }; 
 virtual MStatus undoIt() {}; 
 ``` 
-µ±ÓÃ»§°´¼üÀıÈçCtrl+Z×öÍêundo, ÓÖ¾õµÃĞèÒªredo»ØÈ¥, ÄÇÃ´ Shift+Z×öredoµÄÊ±ºò£¬Õâ¸öoperationµÄsettingÆäÊµÊÇÑØÓÃÁËÖ®Ç°×ödoItÊ±ºòµÄsetting£¬ËùÒÔdoIt()±ÈredoIt()¶àÁËÒ»Á½²½¶øÒÑ¡£
+å½“ç”¨æˆ·æŒ‰é”®ä¾‹å¦‚Ctrl+Zåšå®Œundo, åˆè§‰å¾—éœ€è¦redoå›å», é‚£ä¹ˆ Shift+Zåšredoçš„æ—¶å€™ï¼Œè¿™ä¸ªoperationçš„settingå…¶å®æ˜¯æ²¿ç”¨äº†ä¹‹å‰åšdoItæ—¶å€™çš„settingï¼Œæ‰€ä»¥doIt()æ¯”redoIt()å¤šäº†ä¸€ä¸¤æ­¥è€Œå·²ã€‚
 
-Õâ¸ödo/redoº¯ÊıÀïÃæµÄ·Ö¹¤ÎÊÌâ£¬ÔÚÒÔÇ°µÄMudbox projectÖĞ¾ÍÓöµ½¹ı£¬µ±Ê±µÄĞ´·¨ÓĞµãÏñ:
+è¿™ä¸ªdo/redoå‡½æ•°é‡Œé¢çš„åˆ†å·¥é—®é¢˜ï¼Œåœ¨ä»¥å‰çš„Mudbox projectä¸­å°±é‡åˆ°è¿‡ï¼Œå½“æ—¶çš„å†™æ³•æœ‰ç‚¹åƒ:
 ```
 // code
 enum Status { DO, UNDO, REDO } status; 
@@ -38,6 +42,6 @@ virtual bool CustomOp::ExecuteAndInvert( void )
 // for more details, check the mudbox sdk operation.h;
 ```
 
-[2014/6/30 updated] ÉÏÃæµÄcommandÒ²ºÃ, operationÒ²ºÃ, ÊÇ¾ßÌåµÄÄ³¸öĞèÒªÖ§³ÖundoableµÄ"²Ù×÷", ¶øÒªÕûÌåÖ§³Öundo¹¦ÄÜ, »¹ĞèÒª¹ÜÀíÕâĞ©command/operationµÄmamager/center/kernelËæ±ãÔõÃ´½Ğ. ¹ÜÀíÕßµÄ¹¦ÄÜÊÇ°ÑÕâĞ©command/operationÑ¹Õ»ºÍ³öÕ», ²¢µ÷ÓÃËüÃÇµÄÏàÓ¦º¯Êı(ÉÏÃæÎÒÃÇÌáµ½µÄÖ»ÊÇÒ»²¿·Ö). ¶øÕâ¸ö¹ÜÀíÕßµÄÊµÏÖÖĞ, Ò»°ã´øÒ»¸öÕ»stackµÄ½á¹¹ÓÃÓÚÒÔÌØ¶¨´ÎĞò´æ·ÅÕâĞ©cmd/op, ÄÇÃ´¼ÙÈçÒÔ¹ÜÀíÕßµÄ½Ç¶È»òÕßÊÇstackµÄ½Ç¶ÈÀ´¿´ÄÇĞ©cmd/op, ÓÖÊÇÔõÃ´Ò»¸ö¹ı³ÌÄØ? ¾ßÌåÇësearchÎÒÁíÒ»Æª¸úundo/redoÏà¹ØµÄÎÄÕÂ, Ğ»Ğ»¡£
+[2014/6/30 updated] ä¸Šé¢çš„commandä¹Ÿå¥½, operationä¹Ÿå¥½, æ˜¯å…·ä½“çš„æŸä¸ªéœ€è¦æ”¯æŒundoableçš„"æ“ä½œ", è€Œè¦æ•´ä½“æ”¯æŒundoåŠŸèƒ½, è¿˜éœ€è¦ç®¡ç†è¿™äº›command/operationçš„mamager/center/kerneléšä¾¿æ€ä¹ˆå«. ç®¡ç†è€…çš„åŠŸèƒ½æ˜¯æŠŠè¿™äº›command/operationå‹æ ˆå’Œå‡ºæ ˆ, å¹¶è°ƒç”¨å®ƒä»¬çš„ç›¸åº”å‡½æ•°(ä¸Šé¢æˆ‘ä»¬æåˆ°çš„åªæ˜¯ä¸€éƒ¨åˆ†). è€Œè¿™ä¸ªç®¡ç†è€…çš„å®ç°ä¸­, ä¸€èˆ¬å¸¦ä¸€ä¸ªæ ˆstackçš„ç»“æ„ç”¨äºä»¥ç‰¹å®šæ¬¡åºå­˜æ”¾è¿™äº›cmd/op, é‚£ä¹ˆå‡å¦‚ä»¥ç®¡ç†è€…çš„è§’åº¦æˆ–è€…æ˜¯stackçš„è§’åº¦æ¥çœ‹é‚£äº›cmd/op, åˆæ˜¯æ€ä¹ˆä¸€ä¸ªè¿‡ç¨‹å‘¢? å…·ä½“è¯·searchæˆ‘å¦ä¸€ç¯‡è·Ÿundo/redoç›¸å…³çš„æ–‡ç« , è°¢è°¢ã€‚
 
 

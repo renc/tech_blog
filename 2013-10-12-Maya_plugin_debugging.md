@@ -1,22 +1,31 @@
+Title: How to debug maya custom plugin 
+Date: 2013-10-12 10:20
+Modified: 2013-10-12 19:30
+Category: programming
+Tags: maya, 
+Slug: How to debug maya custom plugin 
+Authors: renc 
+Summary: æ¶‰åŠmaya pluginå¼€å‘çš„æ—¶å€™ï¼Œæ€ä¹ˆdebugå‘¢?
+
 --- 
 layout: post 
 title: How to debug maya custom plugin 
 categories: programming 
 --- 
 
-ÒıÑÔ
+å¼•è¨€
 ----
-> Éæ¼°maya plugin¿ª·¢µÄÊ±ºò£¬ÔõÃ´debugÄØ? 
+> æ¶‰åŠmaya pluginå¼€å‘çš„æ—¶å€™ï¼Œæ€ä¹ˆdebugå‘¢? 
 
-Attach to maya process ... ¼ÄÉú 
+Attach to maya process ... å¯„ç”Ÿ 
 ----
-step 1. maya plugin manager (Window -> Settings/Preferences -> Plug-in Manager)ÖĞload your custom plugin. This plugin need to be built by the same compiler version of maya, Ò²Ğí²»ĞèÒª. 
-step 2. at your visual studio project of that custom plugin, Tools -> Attach to Process ..., choose maya.exe you will see visual studio processing some source files....Õâ¾ÍÍêÕû¼ÄÉúÁË. 
+step 1. maya plugin manager (Window -> Settings/Preferences -> Plug-in Manager)ä¸­load your custom plugin. This plugin need to be built by the same compiler version of maya, ä¹Ÿè®¸ä¸éœ€è¦. 
+step 2. at your visual studio project of that custom plugin, Tools -> Attach to Process ..., choose maya.exe you will see visual studio processing some source files....è¿™å°±å®Œæ•´å¯„ç”Ÿäº†. 
 
 Debug
 ---- 
-+ MGlobal::displayInfo(MString("..")); Êä³öµ½Script Editor. 
++ MGlobal::displayInfo(MString("..")); è¾“å‡ºåˆ°Script Editor. 
 
-+ MStatus status; Õâ¶«Î÷ÊÇºÜ¶àº¯ÊıµÄ·µ»ØÖµ£¬¼ÇµÃÅĞ¶ÏÊÇ·ñMS::kSuccess. ÓÃMString MStatus::errorString() constº¯Êı·½±ãÊä³öº¯ÊıµÄ·µ»Ø×´Ì¬. 
++ MStatus status; è¿™ä¸œè¥¿æ˜¯å¾ˆå¤šå‡½æ•°çš„è¿”å›å€¼ï¼Œè®°å¾—åˆ¤æ–­æ˜¯å¦MS::kSuccess. ç”¨MString MStatus::errorString() constå‡½æ•°æ–¹ä¾¿è¾“å‡ºå‡½æ•°çš„è¿”å›çŠ¶æ€. 
 
 + 

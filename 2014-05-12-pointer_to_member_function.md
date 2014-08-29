@@ -1,10 +1,19 @@
+Title: Pointer to Member Function  
+Date: 2014-05-12 10:20
+Modified: 2014-05-12 19:30
+Category: programming 
+Tags: 
+Slug: Pointer to Member Function 
+Authors: 
+Summary: In the middle of time and space
+
 --- 
 layout: post 
 title: Pointer to Member Function 
 categories: programming 
 --- 
 
-function pointerÊÇÖªµÀµÄ, Èç
+function pointeræ˜¯çŸ¥é“çš„, å¦‚
 ``` 
 int max( int a, int b) { ... };
  
@@ -19,7 +28,7 @@ pFtor = &max;
 int iResult = pFtor(1, 2);
 ``` 
 
-µ«ÊÇµ±¿´µ½ÀàËÆÒÔÏÂ´úÂëÊ±ºò»¹ÊÇ¿Ö¾åÁËÒ»ÏÂ: 
+ä½†æ˜¯å½“çœ‹åˆ°ç±»ä¼¼ä»¥ä¸‹ä»£ç æ—¶å€™è¿˜æ˜¯ææƒ§äº†ä¸€ä¸‹: 
 ``` 
 class Tool {
 	int doA(ArgumentType &);
@@ -41,9 +50,9 @@ int iResultA = (pToolObj->*pFtorA)(argumentList);
 
 ``` 
 
-GoogleÁËÒ»ÏÂ£¬Ô­À´ÊÇpointer to member function. Ò»°ãpointerÊÇÖ¸ÏòÒ»¸öobsolete address, µ«ÊÇÕâ¸öpointer to member function, ÏñÊÇÖ¸ÏòÒ»¸öÀàclassÀïÃæµÄÆ«ÒÆµØÖ·offset¶øÒÑ¡£¸ø³öÒ»¸ö¶ÔÏó(ÖªµÀÀàµÄÀàÐÍ)£¬+Õâ¸öoffset, ÍÆµ¼³ö¾ßÌåÊÇÄ³¸öº¯Êý? 
+Googleäº†ä¸€ä¸‹ï¼ŒåŽŸæ¥æ˜¯pointer to member function. ä¸€èˆ¬pointeræ˜¯æŒ‡å‘ä¸€ä¸ªobsolete address, ä½†æ˜¯è¿™ä¸ªpointer to member function, åƒæ˜¯æŒ‡å‘ä¸€ä¸ªç±»classé‡Œé¢çš„åç§»åœ°å€offsetè€Œå·²ã€‚ç»™å‡ºä¸€ä¸ªå¯¹è±¡(çŸ¥é“ç±»çš„ç±»åž‹)ï¼Œ+è¿™ä¸ªoffset, æŽ¨å¯¼å‡ºå…·ä½“æ˜¯æŸä¸ªå‡½æ•°? 
 
-¸ü¸´ÔÓµÄÇé¿ö£¬Ò²ÊÇ¸ü³£ÓÃµÄÇé¿öÊÇÒýÈëToolµÄ×ÓÀàderived class;
+æ›´å¤æ‚çš„æƒ…å†µï¼Œä¹Ÿæ˜¯æ›´å¸¸ç”¨çš„æƒ…å†µæ˜¯å¼•å…¥Toolçš„å­ç±»derived class;
 ```  
 class ToolX {
 	// override doA and doB functions;
@@ -57,13 +66,13 @@ ToolY toolYObj;
 MemberFunctionPtr pFtorA = &Tool::doA; 
 MemberFunctionPtr pFtorB = &Tool::doB; 
  
-int iResultXA = (toolObjX.*pFtorA)(argumentList);  // ? ÊÇµ÷ÓÃÁËmember func from base class or derived classÄØ? 
+int iResultXA = (toolObjX.*pFtorA)(argumentList);  // ? æ˜¯è°ƒç”¨äº†member func from base class or derived classå‘¢? 
 int iResultYA = (toolObjY.*pFtorA)(argumentList);  // ?
 
 ```   
 
-OK£¬¼òµ¥ÖªµÀÁËÓÐÕâÑùµÄ¼¼ÊõÒÔºó£¬ÄÇÃ´, ÕâÖÖ¼¼ÊõÓÐÊ²Ã´ÓÃÄØ? 
-Function pointerÃ²ËÆºÜ¶àÇé¿öÏÂ¶¼ÊÇÓÃÓÚ×÷Îª»Øµ÷º¯Êýcallback function, Ä¿µÄÊÇÁé»î. ÕâÖÖpointer to member functionÒ²¿ÉÒÔÕâÃ´ÓÃ¡£
+OKï¼Œç®€å•çŸ¥é“äº†æœ‰è¿™æ ·çš„æŠ€æœ¯ä»¥åŽï¼Œé‚£ä¹ˆ, è¿™ç§æŠ€æœ¯æœ‰ä»€ä¹ˆç”¨å‘¢? 
+Function pointerè²Œä¼¼å¾ˆå¤šæƒ…å†µä¸‹éƒ½æ˜¯ç”¨äºŽä½œä¸ºå›žè°ƒå‡½æ•°callback function, ç›®çš„æ˜¯çµæ´». è¿™ç§pointer to member functionä¹Ÿå¯ä»¥è¿™ä¹ˆç”¨ã€‚
 ``` 
 typedef int(Tool::*MemberFunctionPtr)(ArgumentType &);
 
@@ -84,11 +93,11 @@ class ToolCallback {
 	
 	int do(ArgumentType) { (toolObj.*pFtor)( argument ); }
 
-	Tool &toolObj; 				// ×é³É1: an object;
-	MemberFunctionPtr pFtor;	// ×é³É2: on offset; 
+	Tool &toolObj; 				// ç»„æˆ1: an object;
+	MemberFunctionPtr pFtor;	// ç»„æˆ2: on offset; 
 }; 
 
-// ºóÃæÎÒÃÇ¾Í¿ÉÒÔ°ÑToolCallback *callbackÔÚ´úÂëÀïÃæ´«À´´«È¥, 
-// ×îºóÎÒÃÇÏëÖ´ÐÐÕâ¸ö¶«Î÷ÁË, ÄÇ¾Í
+// åŽé¢æˆ‘ä»¬å°±å¯ä»¥æŠŠToolCallback *callbackåœ¨ä»£ç é‡Œé¢ä¼ æ¥ä¼ åŽ», 
+// æœ€åŽæˆ‘ä»¬æƒ³æ‰§è¡Œè¿™ä¸ªä¸œè¥¿äº†, é‚£å°±
 callback->do(argument); 
 ``` 

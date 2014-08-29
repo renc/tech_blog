@@ -1,18 +1,27 @@
+Title: In the middle of time and space  
+Date: 2014-05-09 10:20
+Modified: 2014-05-09 19:30
+Category: programming 
+Tags: 
+Slug: In the middle of time and space 
+Authors: 
+Summary: In the middle of time and space
+
 --- 
 layout: post 
-title: In the middle of time and space  
+title: In the middle of time and space   
 categories: programming 
 --- 
 
-¸Õ·¢ÉúÁËÒ»¸öÓĞÒâË¼µÄÊÂÇé, 5ÔÂ9ºÅ16:40
+åˆšå‘ç”Ÿäº†ä¸€ä¸ªæœ‰æ„æ€çš„äº‹æƒ…, 5æœˆ9å·16:40
 
-Ğ¡»ïCËµÁËÒ»¶Î»°;
-Ğ¡»ïB»Ø´ğÁËÒ»¶Î»°;
+å°ä¼™Cè¯´äº†ä¸€æ®µè¯;
+å°ä¼™Bå›ç­”äº†ä¸€æ®µè¯;
 
-Ğ¡»ïCÊÇÔÚ±±ÃÀÎ÷º£°¶, ¸úÎÒÃÇ²î16Ğ¡Ê±; 
-Ğ¡»ïBÊÇÔÚÓ¢¹ú.
+å°ä¼™Cæ˜¯åœ¨åŒ—ç¾è¥¿æµ·å²¸, è·Ÿæˆ‘ä»¬å·®16å°æ—¶; 
+å°ä¼™Bæ˜¯åœ¨è‹±å›½.
 
-ÄÇÃ´C´óÖÂÊÇ5ÔÂ8ºÅÉîÒ¹, B¿ÉÄÜÊÇ9ºÅÔçÉÏ.
+é‚£ä¹ˆCå¤§è‡´æ˜¯5æœˆ8å·æ·±å¤œ, Bå¯èƒ½æ˜¯9å·æ—©ä¸Š.
 
-¹ıÈ¥ºÍÎ´À´µÄ¶Ô»°£¬ÎÒÃÇ¼ĞÔÚÊ±¿ÕÖĞ¼ä£¬ÅÔ¹Û.....
+è¿‡å»å’Œæœªæ¥çš„å¯¹è¯ï¼Œæˆ‘ä»¬å¤¹åœ¨æ—¶ç©ºä¸­é—´ï¼Œæ—è§‚.....
 

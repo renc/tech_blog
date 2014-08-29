@@ -1,3 +1,12 @@
+Title: build error from line ending 
+Date: 2014-05-29 10:20
+Modified: 2014-05-29 19:30
+Category: programming 
+Tags: 
+Slug: build error from line ending 
+Authors: 
+Summary: build error, 具体是error C4335: Mac file format detected: please convert the source file to either DOS or UNIX format怎么办呢？ 
+
 --- 
 layout: post 
 title: build error from line ending  

@@ -1,6 +1,15 @@
+Title: Name on a book 
+Date: 2014-08-19 10:20
+Modified: 2014-08-19 19:30
+Category: programming 
+Tags: 
+Slug: name on a book 
+Authors: 
+Summary: 记录一次参与翻译一本外文书的过程, 过程有点累, 结果有点甜. 
+
 --- 
 layout: post 
-title: python basics 
+title: name on a book  
 categories: programming 
 ---  
 

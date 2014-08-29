@@ -1,3 +1,12 @@
+Title: mesh history 
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: computer graphics 
+Tags: maya 
+Slug: mesh history in maya 
+Authors: 
+Summary: 做demo都只是对mesh做一次修改, 但是好像在一个成熟的程序里面往往是很多次修改的叠加.
+
 --- 
 layout: post 
 title: mesh history  

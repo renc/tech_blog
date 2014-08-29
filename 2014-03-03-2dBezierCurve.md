@@ -1,3 +1,12 @@
+Title: simple implement of 2d bezier curve  
+Date: 2014-03-03 10:20
+Modified: 2014-03-03 19:30
+Category: programming 
+Tags: 
+Slug: simple implement of 2d bezier curve 
+Authors: 
+Summary: å·¥ä½œä¸­åˆä¸€æ¬¡é‡åˆ°nurb curveçš„é—®é¢˜ï¼Œå…·ä½“æ˜¯knotsä¸ªæ•°å’Œæ±‚æ³•çš„é—®é¢˜ã€‚é‚£ä¸œè¥¿å¤ªéš¾ï¼Œç›¸å¯¹æ¥æ¥è¯´ï¼Œbezier curveæ˜“æ‡‚å¾ˆå¤šï¼Œä¸€ç›´æƒ³å®ç°ä¸€ä¸‹æ¥çœ‹çœ‹ï¼Œäºæ˜¯å°±æœ‰äº†æ­¤ã€‚
+
 --- 
 layout: post 
 title: simple implement of 2d bezier curve 
@@ -6,15 +15,15 @@ categories: programming
 
 2d bezier curve - simple implementation                        
 ----
-¹¤×÷ÖĞÓÖÒ»´ÎÓöµ½nurb curveµÄÎÊÌâ£¬¾ßÌåÊÇknots¸öÊıºÍÇó·¨µÄÎÊÌâ¡£ÄÇ¶«Î÷Ì«ÄÑ£¬Ïà¶ÔÀ´À´Ëµ£¬bezier curveÒ×¶®ºÜ¶à£¬Ò»Ö±ÏëÊµÏÖÒ»ÏÂÀ´¿´¿´£¬ÓÚÊÇ¾ÍÓĞÁË´Ë¡£
+å·¥ä½œä¸­åˆä¸€æ¬¡é‡åˆ°nurb curveçš„é—®é¢˜ï¼Œå…·ä½“æ˜¯knotsä¸ªæ•°å’Œæ±‚æ³•çš„é—®é¢˜ã€‚é‚£ä¸œè¥¿å¤ªéš¾ï¼Œç›¸å¯¹æ¥æ¥è¯´ï¼Œbezier curveæ˜“æ‡‚å¾ˆå¤šï¼Œä¸€ç›´æƒ³å®ç°ä¸€ä¸‹æ¥çœ‹çœ‹ï¼Œäºæ˜¯å°±æœ‰äº†æ­¤ã€‚
 
-Õâ´ÎµÄÄÚÈİÊÇ:
+è¿™æ¬¡çš„å†…å®¹æ˜¯:
 + bezier curve, 2d, degree 3 (which means cubic, order = 4, 4 control points); 
-+ ÓÃpolyline°ÑÄÇ4¸ö¿ØÖÆµãµÄÁ¬Ïß»­³öÀ´. 
-+ ÓÃpolyline°Ñcurve»­³öÀ´¡£Êµ¼ÊÉÏÖ»ÊÇcurveµÄÒ»¸öapproximation. ÀıÈç¶ÔÕâ¸öcurveÓÃ200¸öĞ¡Ïß¶ÎÀ´±íÊ¾, ¾ÍµÃsample 201¸öµã. Õâ¾ÍĞèÒªevaluation£¬¸ø³öÒ»¸öt [0, 1], Çó¶ÔÓ¦curveÉÏµÄ×ø±êposition (x, y). ÎÒÕâÀïÓÃµÄÊÇde Casteljau·½·¨À´×öevaluation.
-+ ÓÃkey 0/1/2/3 to selete the corresponding control point£¬ÓÃUp/Down/Left/RightÀ´move the control points, update the curve realtime. 
++ ç”¨polylineæŠŠé‚£4ä¸ªæ§åˆ¶ç‚¹çš„è¿çº¿ç”»å‡ºæ¥. 
++ ç”¨polylineæŠŠcurveç”»å‡ºæ¥ã€‚å®é™…ä¸Šåªæ˜¯curveçš„ä¸€ä¸ªapproximation. ä¾‹å¦‚å¯¹è¿™ä¸ªcurveç”¨200ä¸ªå°çº¿æ®µæ¥è¡¨ç¤º, å°±å¾—sample 201ä¸ªç‚¹. è¿™å°±éœ€è¦evaluationï¼Œç»™å‡ºä¸€ä¸ªt [0, 1], æ±‚å¯¹åº”curveä¸Šçš„åæ ‡position (x, y). æˆ‘è¿™é‡Œç”¨çš„æ˜¯de Casteljauæ–¹æ³•æ¥åševaluation.
++ ç”¨key 0/1/2/3 to selete the corresponding control pointï¼Œç”¨Up/Down/Left/Rightæ¥move the control points, update the curve realtime. 
 
-³ıÈ¥windows/event managentµÄ¸¨Öú´úÂëÒÔÍâ£¬×îÓĞÒâË¼ÊÇÔõÃ´ÊµÏÖde Casteljau:
+é™¤å»windows/event managentçš„è¾…åŠ©ä»£ç ä»¥å¤–ï¼Œæœ€æœ‰æ„æ€æ˜¯æ€ä¹ˆå®ç°de Casteljau:
 <code>
 Vector2d evaluateCubicBezier_deCasteljau(const std::vector<Vector2d> &aCPs, float t)
 {
@@ -39,7 +48,7 @@ Vector2d evaluateCubicBezier_deCasteljau(const std::vector<Vector2d> &aCPs, floa
 } 
 </code>
 
-ÏÂÃæÊÇÒ»Ğ©ÓĞÈ¤µÄ½á¹û:
+ä¸‹é¢æ˜¯ä¸€äº›æœ‰è¶£çš„ç»“æœ:
 ![Alt text](data/2014-03-2dBezierCurve_out_0.png "output") 
                 
 
