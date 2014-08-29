@@ -1,4 +1,8 @@
-[categories] 
+--- 
+layout: post 
+title: why game developers keep getting laid off 
+categories: programming 
+--- 
 
 引言 
 ---- 

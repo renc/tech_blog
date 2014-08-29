@@ -1,6 +1,8 @@
-
-[categories] programming
-
+--- 
+layout: post 
+title: Do and redo 何其相似 
+categories: programming 
+---  
 
 在学maya/MPxCommand, 当一个操作需要支持undo/redo的时候，用户操作的次序可能是: 
 - do sth -> undo it, or 

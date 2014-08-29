@@ -1,4 +1,8 @@
-[categories] computer graphics,
+--- 
+layout: post 
+title: Maya custom menu 
+categories: programming 
+--- 
 
 # how to add custom menu or menuitem into maya 
 在maya中，怎么新加自定义的菜单? 

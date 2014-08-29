@@ -1,8 +1,8 @@
-Title: FloodFill simple implement             
-Author: canjiang ren                
-Date: 2013-10                 
-Tag: geometry             
-                       
+--- 
+layout: post 
+title: Flood fill 
+categories: programming 
+--- 
 
 FloodFill simple implementation                        
 ----

@@ -1,5 +1,8 @@
-
-
+--- 
+layout: post 
+title: How to debug maya custom plugin 
+categories: programming 
+--- 
 
 ÒýÑÔ
 ----

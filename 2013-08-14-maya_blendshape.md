@@ -1,8 +1,8 @@
-
-file: 2013-08-14_maya_blendshape.md 
-title: maya blendshape  
-date: 
-////////////////////////////////////////////////////////////
+--- 
+layout: post 
+title: Blendshape at maya 
+categories: programming 
+--- 
 
 ÒýÑÔ
 ----

@@ -1,4 +1,8 @@
-[categories] programming,
+--- 
+layout: post 
+title: function override 
+categories: programming 
+--- 
 
 # 哪个override的函数才是啊? 
 

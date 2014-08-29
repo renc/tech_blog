@@ -1,9 +1,8 @@
-{
-
-title: "Tree view at Qt"
-
-tags: ["qt"] 
-} 
+--- 
+layout: post 
+title: Tree view at Qt 
+categories: programming 
+--- 
 
 ÒýÑÔ
 ----

@@ -1,4 +1,8 @@
-[categories] programming,
+--- 
+layout: post 
+title: build error from line ending  
+categories: programming 
+--- 
 
 故事的开端是checkin了一个.cpp，当然本地是build过的，但是server端那边反馈说build error, 具体是
 error C4335: Mac file format detected: please convert the source file to either DOS or UNIX format

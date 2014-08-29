@@ -1,4 +1,8 @@
-[categories] programming, 
+--- 
+layout: post 
+title: Example of code conventions 
+categories: programming 
+--- 
 
 刚看到如下代码:
 ```    

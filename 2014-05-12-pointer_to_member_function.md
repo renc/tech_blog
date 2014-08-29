@@ -1,4 +1,8 @@
-[categories] programming,
+--- 
+layout: post 
+title: Pointer to Member Function 
+categories: programming 
+--- 
 
 function pointer是知道的, 如
 ``` 

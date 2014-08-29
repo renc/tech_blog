@@ -1,4 +1,8 @@
-[categories] computer graphics, programming,
+--- 
+layout: post 
+title: Note of Maya programming 
+categories: programming computer graphics  
+--- 
 
 ÒýÑÔ
 ---- 

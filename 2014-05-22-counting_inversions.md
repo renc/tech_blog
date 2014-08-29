@@ -1,4 +1,8 @@
-[categories] programming, 
+--- 
+layout: post 
+title: algo - counting inversions 
+categories: programming  
+--- 
 
 Background
 ---- 

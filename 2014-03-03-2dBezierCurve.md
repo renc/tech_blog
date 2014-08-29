@@ -1,8 +1,8 @@
-Title: 2d bezier curve - simple implement             
-Author: canjiang ren                
-Date: 2014-03                
-Tag: geometry             
-                       
+--- 
+layout: post 
+title: simple implement of 2d bezier curve 
+categories: programming 
+---                        
 
 2d bezier curve - simple implementation                        
 ----

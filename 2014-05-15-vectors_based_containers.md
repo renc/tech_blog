@@ -1,4 +1,8 @@
-[categories] programming, 
+--- 
+layout: post 
+title: Vector based containers     
+categories: programming 
+--- 
 
 ÒýÑÔ
 ---- 

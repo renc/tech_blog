@@ -1,5 +1,8 @@
-
-[categories] computer graphics, 
+--- 
+layout: post 
+title: mesh history  
+categories: computer graphics
+--- 
 
 引言
 ---- 

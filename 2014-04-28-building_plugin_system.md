@@ -1,4 +1,8 @@
-[categories] programming, 
+--- 
+layout: post 
+title: How to build a plugin system 
+categories: programming 
+--- 
 
 很多软件都提供了API给customer, 可以写plugin来扩展原来的程序. 
 
