@@ -1,4 +1,8 @@
-[categories] programming,    
+--- 
+layout: post 
+title: python basics 
+categories: programming 
+---  
 
 > you know, it is funny that people do not care your name, until you are in trouble. 
 -- 美剧<疑犯追凶>第一集里面的话, 类似而已哦. 

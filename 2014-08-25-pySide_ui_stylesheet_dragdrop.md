@@ -1,4 +1,8 @@
-[categories] programming, 
+--- 
+layout: post 
+title: build simple ui using pySide 
+categories: programming 
+--- 
 
 > life is short, use python. 
 

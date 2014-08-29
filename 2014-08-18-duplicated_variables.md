@@ -1,4 +1,8 @@
-[categories] programming,
+--- 
+layout: post 
+title: conflict by duplicated variables  
+categories: programming 
+---  
 
 > conflict 
 

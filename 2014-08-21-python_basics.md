@@ -1,4 +1,8 @@
-[categories] programming, 
+--- 
+layout: post 
+title: python basics 
+categories: programming 
+---  
 
 if string == "": 
     pass

@@ -1,5 +1,8 @@
-[categories] computer graphics, 
-
+--- 
+layout: post 
+title: python basics 
+categories: computer graphics  
+---  
 
 Background背景
 ---- 
