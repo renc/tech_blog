@@ -4,15 +4,9 @@ Modified: 2014-08-25 19:30
 Category: programming
 Tags: 
 Slug: build simple ui using pySide 
-Authors: renc
-Summary: 记录一下做UI prototype时候遇到的新概念 
+Authors: renc          
 
---- 
-layout: post 
-title: build simple ui using pySide 
-categories: programming 
---- 
-
+记录一下做UI prototype时候遇到的新概念 
 > life is short, use python. 
 
 早有耳闻, 一试果然不凡. 
@@ -85,6 +79,8 @@ QString sender().objectName();
 
 假如一个signal连了好几个slots, 这些slots被调用的次序怎么决定的呢?            
 好像是Qt 4.6之后就改成谁先连就先调用谁. 而印象中boost中的signal库是可以决定slot的调用次序的?            
+http://qt-project.org/wiki/Signals_and_Slots_in_PySide
+
  
 example 4. layout and widget 
 question: layout and widget的关系 

@@ -6,12 +6,7 @@ Tags:
 Slug: Flood fill
 Authors: 
 Summary: 看见someone提到Flood fill algorithm, 惭愧，不熟悉这个名字，于是Google一下，竟然跟BFS很像，于是想着要简单实现一下。
-
---- 
-layout: post 
-title: Flood fill 
-categories: programming 
---- 
+ 
 
 FloodFill simple implementation                        
 ----

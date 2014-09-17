@@ -4,14 +4,7 @@ Modified: 2010-12-05 19:30
 Category: programming 
 Tags: 
 Slug: Example of code conventions 
-Authors: 
-Summary: Example of code conventions
-
---- 
-layout: post 
-title: Example of code conventions 
-categories: programming 
---- 
+Authors:  
 
 刚看到如下代码:
 ```    

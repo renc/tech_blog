@@ -4,15 +4,8 @@ Modified: 2014-05-12 19:30
 Category: programming 
 Tags: 
 Slug: Pointer to Member Function 
-Authors: 
-Summary: In the middle of time and space
-
---- 
-layout: post 
-title: Pointer to Member Function 
-categories: programming 
---- 
-
+Authors:   
+   
 function pointer是知道的, 如
 ``` 
 int max( int a, int b) { ... };

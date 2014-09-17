@@ -5,13 +5,9 @@ Category: programming
 Tags: 
 Slug: why game developers keep getting laid off 
 Authors: 
-Summary: 翻译why game developers keep getting laid off这个文章. 里面有些观点是挺有意思的.
 
---- 
-layout: post 
-title: why game developers keep getting laid off 
-categories: programming 
---- 
+翻译了一下why game developers keep getting laid off这个文章. 里面有些观点是挺有意思的.   
+   
 
 引言 
 ---- 

@@ -5,14 +5,9 @@ Category: programming
 Tags: 
 Slug: algo - counting inversions
 Authors: 
-Summary: 算法练习: counting inversions
 
---- 
-layout: post 
-title: algo - counting inversions 
-categories: programming  
---- 
-
+算法练习: counting inversions       
+  
 Background
 ---- 
 Given an array, say [1, 3, 5, 2, 4, 6], to count the inversions.

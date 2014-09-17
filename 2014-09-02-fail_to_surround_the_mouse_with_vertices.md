@@ -5,8 +5,9 @@ Category:
 Tags: 
 Slug: Fail to surround the mouse with the vertices 
 Authors: renc
-Summary: 一个鼠标点press/click在模型上, 然后drag/move, 在这个drag的路程中, 鼠标压到的faces/edges都是连续的, 而顶点vertices竟然不是, why ? 
 
+一个鼠标点press/click在模型上, 然后drag/move, 在这个drag的路程中, 鼠标压到的faces/edges都是连续的, 而顶点vertices竟然不是, why ?  
+     
 ![Alt text](data/2014-09-02-fail_to_surround_mouse_with_vertices.PNG "output")     
 一个stroke的过程: mouse click/press -> drag/move -> release.    
 图中红色点假如为click的起点, 然后沿着粉色的路径来drag鼠标....     

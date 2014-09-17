@@ -5,22 +5,14 @@ Category: programming
 Tags: maya, 
 Slug: Blendshape at maya 
 Authors: renc 
-Summary: 最近接触了一点maya blendshape programming, 稍微记录一下。
+  
 
---- 
-layout: post 
-title: Blendshape at maya 
-categories: programming 
---- 
-
-引言
-----
-> 最近接触了一点maya blendshape programming, 稍微记录一下。
-
-BlendShape deformer basis (基础)
-----
+最近接触了一点maya blendshape programming, 稍微记录一下。
+ 
+BlendShape deformer basis (基础) 
+----  
 先说明一个特点，当drag一个cube or sphere物体的时候，会生成<transform node, shape node>两个nodes, 具体的细节请看maya scene graph，DAG。
-
+ 
 To create a simple blendshape example,  
 Polygon mode, create a cube, we have <pCube1, pCubeShape1>;   
 Select cube1, Shift+D, we have <pCube2, pCubeShape2>, move cube2 a little bit away from cube1.  

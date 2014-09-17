@@ -6,12 +6,7 @@ Tags:
 Slug: simple implement of 2d bezier curve 
 Authors: 
 Summary: 工作中又一次遇到nurb curve的问题，具体是knots个数和求法的问题。那东西太难，相对来来说，bezier curve易懂很多，一直想实现一下来看看，于是就有了此。
-
---- 
-layout: post 
-title: simple implement of 2d bezier curve 
-categories: programming 
----                        
+      
 
 2d bezier curve - simple implementation                        
 ----

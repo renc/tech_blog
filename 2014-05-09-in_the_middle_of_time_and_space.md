@@ -4,14 +4,7 @@ Modified: 2014-05-09 19:30
 Category: programming 
 Tags: 
 Slug: In the middle of time and space 
-Authors: 
-Summary: In the middle of time and space
-
---- 
-layout: post 
-title: In the middle of time and space   
-categories: programming 
---- 
+Authors:  
 
 刚发生了一个有意思的事情, 5月9号16:40
 

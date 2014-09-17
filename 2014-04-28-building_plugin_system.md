@@ -5,14 +5,8 @@ Category: programming
 Tags: 
 Slug: How to build a plugin system 
 Authors: 
-Summary: Applications normally support custom plugins, how to do that?
 
---- 
-layout: post 
-title: How to build a plugin system 
-categories: programming 
---- 
-
+Applications normally support custom plugins, how to do that?  
 很多软件都提供了API给customer, 可以写plugin来扩展原来的程序. 
 
 例如mudbox和maya. 从mudbox的API来看，一般可以实现

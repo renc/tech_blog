@@ -6,12 +6,7 @@ Tags:
 Slug: Note of Maya programming
 Authors: 
 Summary: 学maya时候有些新概念要记录一下，否则忘得快. 
-
---- 
-layout: post 
-title: Note of Maya programming 
-categories: programming computer graphics  
---- 
+ 
 
 引言
 ---- 
@@ -25,6 +20,11 @@ Command
 
 分regular command and interactive command (tool command)两种, 分别对应MPxCommand and MPxToolCommand. 
 
+ls -sl  # to list objects /components are selected. 
+ls -hilite  # to list the objects ready be select their components 
+ls -psh  # the current pre-select highlight coomponent. 
+ 
+check the hilite command too. 
 
 Context 
 ---- 

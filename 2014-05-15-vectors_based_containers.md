@@ -5,14 +5,9 @@ Category: programming
 Tags: 
 Slug: Vector based containers     
 Authors: 
-Summary: 在代码中std::vector经常被用到吧? 因为它很容易用, 只管往里面塞东西就ok了. 但是用!=用得好, 而对它的了解又是否足够把它用好呢...下面是在阅读参考文章时候的笔记.
 
---- 
-layout: post 
-title: Vector based containers     
-categories: programming 
---- 
-
+在代码中std::vector经常被用到吧? 因为它很容易用, 只管往里面塞东西就ok了. 但是用!=用得好, 而对它的了解又是否足够把它用好呢...下面是在阅读参考文章时候的笔记.  
+  
 引言
 ---- 
 

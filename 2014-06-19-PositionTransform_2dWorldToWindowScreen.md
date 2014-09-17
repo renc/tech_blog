@@ -5,14 +5,9 @@ Category: computer graphics,
 Tags: 
 Slug: Position Transfromation from 2d world to window screen 
 Authors: 
-Summary: 工作中遇到一个问题, 坐标映射。A 2d world is rendering in a window, user can mouse click on the window, how to find the position at 2d world corresponding to this mouse positon?
-
---- 
-layout: post 
-title: Position Transfromation from 2d world to window screen 
-categories: computer graphics  
----  
-
+ 
+工作中遇到一个问题, 坐标映射。A 2d world is rendering in a window, user can mouse click on the window, how to find the position at 2d world corresponding to this mouse positon?     
+  
 Background背景
 ---- 
 工作中遇到一个问题, 坐标映射。A 2d world is rendering in a window, user can mouse click on the window, how to find the position at 2d world corresponding to this mouse positon?

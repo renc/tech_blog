@@ -5,13 +5,8 @@ Category: computer graphics
 Tags: maya 
 Slug: mesh history in maya 
 Authors: 
-Summary: 做demo都只是对mesh做一次修改, 但是好像在一个成熟的程序里面往往是很多次修改的叠加.
 
---- 
-layout: post 
-title: mesh history  
-categories: computer graphics
---- 
+做demo都只是对mesh做一次修改, 但是好像在一个成熟的程序里面往往是很多次修改的叠加. 
 
 引言
 ---- 

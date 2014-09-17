@@ -5,16 +5,10 @@ Category: programming
 Tags: 
 Slug: conflict by duplicated variables 
 Authors: 
-Summary: 用多于一个变量来表示一个状态, 变量之间很容易不一致呢.
 
---- 
-layout: post 
-title: conflict by duplicated variables  
-categories: programming 
----  
-
-> conflict 
-
+用多于一个变量来表示一个状态, 变量之间很容易不一致呢.      
+> conflict  
+                 
 假如我们要描述以下这个状态:          
 在一次mouse click的picking中, 我们给出了pick的范围, 一个rectangle, 然后要标记是否只要pick一个物体object就够了, 还是pick所有在rectangel下面的物体.  
          

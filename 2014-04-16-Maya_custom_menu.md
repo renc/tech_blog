@@ -6,12 +6,7 @@ Tags:
 Slug: Maya custom menu 
 Authors: 
 Summary: How to add custom menu or menuitem into maya ui.
-
---- 
-layout: post 
-title: Maya custom menu 
-categories: programming 
---- 
+ 
 
 # how to add custom menu or menuitem into maya 
 在maya中，怎么新加自定义的菜单? 

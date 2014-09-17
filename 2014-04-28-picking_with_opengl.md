@@ -5,13 +5,7 @@ Category: programming
 Tags: 
 Slug: Picking with OpenGL 
 Authors: 
-Summary: Picking with OpenGL 
-
---- 
-layout: post 
-title: Picking with OpenGL 
-categories: computer graphics  
---- 
+ 
 
 > If you have choices, choose the best. If you have no choice, do the best. 如果有选择，那就选择最好的；如果没有选择，那就努力做到最好。
 

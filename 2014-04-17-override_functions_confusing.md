@@ -6,12 +6,7 @@ Tags:
 Slug: choose the overrided function  
 Authors: 
 Summary: In class hierarchy, if functions are overrided by some subclass, which one will be invoked? 
-
---- 
-layout: post 
-title: choose the overrided function 
-categories: programming 
---- 
+ 
 
 # 哪个override的函数才是啊? 
 

@@ -5,26 +5,22 @@ Category: programming
 Tags: qt
 Slug: Tree view at Qt 
 Authors: renc
-Summary: Qt中的TreeView很复杂, 记录一下自己的理解. 
 
---- 
-layout: post 
-title: Tree view at Qt 
-categories: programming 
---- 
-
-引言
-----
+Qt中的TreeView很复杂, 记录一下自己的理解.  
+ 
+  
+引言  
+----     
 > Model/View/item的关系就有点像Container/Algorithm/Iterator的关系。
 > Tree view属于Model/View Programming的一部分。有些
 > 
 
 Index 带上下层级结构的二维索引 
-----
+----     
 QModelIndex()表示model中最上层的root item的index, QModelIndex().isValid() == 0. 
-
+      
 item之前有上下层级关系，index.parent()获取index的parent. 当index.parent().isValid() == false，表示这个item的parent就是root item. 这些items被称为top-level itmes. 
-
+      
 to retrieve data from a model:
 for (int row = 0; row < model->rowCount(parentIndex); ++row)
 {

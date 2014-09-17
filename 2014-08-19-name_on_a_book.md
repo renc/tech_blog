@@ -5,18 +5,13 @@ Category: programming
 Tags: 
 Slug: name on a book 
 Authors: 
-Summary: 记录一次参与翻译一本外文书的过程, 过程有点累, 结果有点甜. 
 
---- 
-layout: post 
-title: name on a book  
-categories: programming 
----  
+记录一次参与翻译一本外文书的过程, 过程有点累, 结果有点甜.   
 
 > you know, it is funny that people do not care your name, until you are in trouble. 
 -- 美剧<疑犯追凶>第一集里面的话, 类似而已哦. 
 
-去翻译一本书, 可以出现在书店书架上的, 还提到你的名字, 是不是很cool?    
+去参与翻译一本书, 可以出现在书店书架上的, 还提到你的名字, 是不是很cool?    
 
 昨天看到email, 被告知我有份参与的书终于上架了, "在各大网店都有售。但是样书会比较慢" 里面上google一下，果然在amazon.cn等都找到了: 
 ```     
