@@ -1,6 +1,6 @@
-Title: build simple ui using pySide 
-Date: 2010-12-03 10:20
-Modified: 2010-12-05 19:30
+Title: Example of code conventions
+Date: 2014-05-03 10:20
+Modified: 2014-05-05 19:30
 Category: programming 
 Tags: 
 Slug: Example of code conventions 

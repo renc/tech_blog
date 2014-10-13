@@ -1,7 +1,7 @@
 Title: Position Transfromation from 2d world to window screen 
-Date: 2010-12-03 10:20
-Modified: 2010-12-05 19:30
-Category: computer graphics, 
+Date: 2014-06-19 10:20
+Modified: 2014-06-19 19:30
+Category: computer graphics  
 Tags: 
 Slug: Position Transfromation from 2d world to window screen 
 Authors: 

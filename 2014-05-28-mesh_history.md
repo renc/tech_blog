@@ -1,7 +1,7 @@
 Title: mesh history 
-Date: 2010-12-03 10:20
-Modified: 2010-12-05 19:30
-Category: computer graphics 
+Date: 2014-05-28 10:20
+Modified: 2014-05-28 19:30
+Category:  
 Tags: maya 
 Slug: mesh history in maya 
 Authors: 
@@ -56,3 +56,5 @@ References
 [1] mudbox sdk;
 [2] maya > devkit plugin > splitUVCmd example; 
 [3] maya developer help > Polygon API > Construction History and Tweaks; 其实maya developer help > Polygon API这一节都看吧.
+[4] maya Developer Resources > API Guide > Polygon API > How polygons are handled internally 这算是[3]的基础. 
+ 

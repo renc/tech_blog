@@ -1,6 +1,6 @@
-Title: build simple ui using pySide 
-Date: 2010-12-03 10:20
-Modified: 2010-12-05 19:30
+Title: Picking with OpenGL  
+Date: 2014-04-28 10:20
+Modified: 2014-04-28 19:30
 Category: programming 
 Tags: 
 Slug: Picking with OpenGL 
