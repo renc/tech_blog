@@ -24,7 +24,7 @@ cube2 and cube3 are as target shapes for this blendshape.
 
 select cube1, menu Windows > Connections, we see the connections of these nodes.
 
-![Alt text](2013-08-14_maya_blendshape_fig_maya_scene.PNG "maya scene")
+![Alt text](data/2013-08-14_maya_blendshape_fig_maya_scene.PNG "maya scene")
 
 **Maya/Fbx API Table.**   
 | source | blendshape | channel | target |           
@@ -103,7 +103,7 @@ MStatus status = MGlobal::executeCommand(command, result);
 ```   
  
 updated about getting the target shapes from the blendshape deformer node.
-![Alt text](2013-08-14_maya_blendshape_fig_maya_scene_Weight_InBetween.PNG "What is Target Weight? Like slots") 
+![Alt text](data/2013-08-14_maya_blendshape_fig_maya_scene_Weight_InBetween.PNG "What is Target Weight? Like slots") 
 
 updated 2013/10/11. blendShape是线性操作，deformed result = source * (1 - target_weight) + target * target_weight;
 source and target可以说shape mesh, 也可以是别的blendshape deformation node的结果。
@@ -168,7 +168,7 @@ blendshape1.weight1 是一个plug的名字，其实这个weight1也同时是对�
 
 也可以把别的值connect到这个target weight上来, 例如通过动画animation或者locator等控制target weight的值的变化。每一个connection是由source plug and destination plug组成的. 在上面的blendShape1例子上增加一点:
 建一个plane1, 打开Window > Node Editor 把plane1的translateX连到blendShape1.weight1, 把plane1的translateY连到blendShape1.weight2, UI上这两个sliders都变成黄色了, DG窗口中blendShape1这个node的形状也从长方形变成的菱形. 
-![Alt text](2013-08-14_maya_blendshape_fig_BS_with_connnection_DG_NodeEditor.PNG "Connections at DG and NodeEditor")
+![Alt text](data/2013-08-14_maya_blendshape_fig_BS_with_connnection_DG_NodeEditor.PNG "Connections at DG and NodeEditor")
 上面的过程其实我们建立了两个connections. 其中一个connection是 (pPlane1.translateX, blendshape1.weight1)，其中pPlane1.translateX称为source plug, blendShape1.weight1称为destination plug. 
 下面的代码显示怎么获得一个blendShape的plug, 以及这些plug的连接connections: 
 ```

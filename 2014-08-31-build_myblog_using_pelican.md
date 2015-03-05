@@ -32,11 +32,13 @@ STATIC_PATHS = [
                
 + 文件的编码                  
 ```                
-C:\Python27\Scripts\pelican.exe path_to_context_folder               
+> C:\Python27\Scripts\pelican.exe path_to_context_folder               
+
+WARNING: Could not process .\2014-12-10-GPP_DoubleBuffer.md
+'utf8' codec can't decode byte 0xca in position 158: invalid continuation byte
 ```                 
-可能会返回说某个位置的编码编译不过, 原因是pelican要求utf8 without BOM的格式. 中文嘛, 
-''
-s——- 之前好像是用GBXXX格式来做encoding的.                    
+可能会返回说某个位置的编码编译不过, 原因是pelican要求utf8 without BOM的格式. 
+中文嘛, 之前好像是用GBXXX格式来做encoding的. 在Notepad++ 右下角有文件的编码, 例如可能是UTF-8 w/o BOM, 也可能是GB2313(Simplified).                    
 修正方法是: Nodepad++ / Encoding / convert to UTF-8 w/o BOM      
               
 + 更改theme                   
