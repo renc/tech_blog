@@ -1,7 +1,7 @@
 Title: texFormat的一次bugFix
 Date: 2015-08-13 20:20
 Modified: 2015-08-13 20:30
-Category:   
+Category: tech   
 Tags:  
 Slug: texFormat的一次bugFix  
 Authors:
